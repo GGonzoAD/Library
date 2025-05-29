@@ -7,10 +7,7 @@ function Book(title,author,pages,read) {
   this.pages = pages;
   this.read = read;
   this.bookInfo = function() {
-    console.log(this.title)
-    console.log(this.author)
-    console.log(this.pages)
-    console.log(this.read)
+    console.log(this.title,'by',this.author,'Pages',this.pages,this.read)
   }
   // the constructor...
 }
