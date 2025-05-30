@@ -28,10 +28,3 @@ function addBookToLibrary(title,author,pages,read,newBook) {
   // take params, create a book then store it in the array
   
 }
-const book1 = new Book('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read');
-const book2 = new Book('The Complete Works of H.P. Lovecraft', 'H.P. Lovecraft', '1112','Not Read');
-const book3 = new Book('The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read');
-
-book1.bookInfo();
-book2.bookInfo();
-book3.bookInfo();
