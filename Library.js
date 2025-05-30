@@ -9,17 +9,15 @@ for(let i = 0; i < myLibrary.length; i++){
 }
 function Book(title,author,pages,read,bookInfo) {
   this.title = title;
-  console.log(this.title);
   this.author = author;
   this.pages = pages;
   this.read = read;
   this.bookInfo = function() {
     console.log(this.title,'by',this.author,this.pages,'Pages','Status:',this.read)
   }
-  console.log(bookInfo);
   // the constructor...
 }
- 
+
 function addBookToLibrary(title,author,pages,read,newBook) {
   title = title;
   author = author;
