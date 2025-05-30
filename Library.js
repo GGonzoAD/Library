@@ -12,7 +12,13 @@ function Book(title,author,pages,read) {
   // the constructor...
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(title,author,pages,read,newBook) {
+  title = title;
+  author = author;
+  pages = pages;
+  read = read;
+  newBook = title, author, pages, read;
+  myLibrary.push("newBook");
   // take params, create a book then store it in the array
   
 }
