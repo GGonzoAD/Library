@@ -4,7 +4,9 @@ const myLibrary = [
   'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
   'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read'
 ];
-
+for(let i = 0; i < myLibrary.length; i++){
+  console.log(myLibrary[i]);
+}
 function Book(title,author,pages,read) {
   this.title = title;
   this.author = author;
