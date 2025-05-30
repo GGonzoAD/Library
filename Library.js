@@ -24,7 +24,7 @@ function addBookToLibrary(title,author,pages,read,newBook) {
   pages = pages;
   read = read;
   newBook = title, author, pages, read;
-  myLibrary.push("newBook");
+  myLibrary.push(newBook);
   // take params, create a book then store it in the array
   
 }
