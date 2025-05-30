@@ -1,5 +1,9 @@
 
-const myLibrary = [];
+const myLibrary = [
+  'Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read',
+  'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
+  'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read'
+];
 
 function Book(title,author,pages,read) {
   this.title = title;
