@@ -7,7 +7,7 @@ const myLibrary = [
 for(let i = 0; i < myLibrary.length; i++){
   console.log(myLibrary[i]);
 }
-function Book(title,author,pages,read) {
+function Book(title,author,pages,read,bookInfo) {
   this.title = title;
   this.author = author;
   this.pages = pages;
