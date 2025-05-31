@@ -23,7 +23,7 @@ function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) {
   this.newAuthor = author;
   this.newPages = pages;
   this.newRead = read;
-  newBook = title, author, pages, read;
+  newBook = newTitle, newAuthor, newPages, newRead;
   myLibrary.push(newBook);
   // take params, create a book then store it in the array
   
