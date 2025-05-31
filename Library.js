@@ -7,7 +7,7 @@ const myLibrary = [
 for(let i = 0; i < myLibrary.length; i++){
   console.log(myLibrary[i]);
 }
-function Book(title,author,pages,read,bookInfo) {
+function Book(title, author, pages, read, bookInfo) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -15,17 +15,18 @@ function Book(title,author,pages,read,bookInfo) {
   this.bookInfo = function() {
     return bookInfo(this.title,'by',this.author,this.pages,'Pages','Status:',this.read);
   }
-  console.log(bookInfo);
+  
   // the constructor...
 }
 
-function addBookToLibrary(title,author,pages,read,newBook) {
-  title = title;
-  author = author;
-  pages = pages;
-  read = read;
+function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) {
+  this.newTitle = title;
+  this.newAuthor = author;
+  this.newPages = pages;
+  this.newRead = read;
   newBook = title, author, pages, read;
   myLibrary.push(newBook);
   // take params, create a book then store it in the array
   
 }
+console.log(Book.bookInfo());
