@@ -15,6 +15,7 @@ function Book(title,author,pages,read,bookInfo) {
   this.bookInfo = function() {
     return bookInfo(this.title,'by',this.author,this.pages,'Pages','Status:',this.read);
   }
+  console.log(bookInfo);
   // the constructor...
 }
 
