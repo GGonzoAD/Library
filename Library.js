@@ -1,8 +1,8 @@
 
-const myLibrary = [
+const myLibrary = [  /// My Array of Books
   'Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read',
   'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
-  'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read'
+  'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read',
 ];
 const myObjects = myLibrary.map(item => ({value: item}));
 console.table(myObjects);
