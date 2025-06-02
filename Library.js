@@ -7,7 +7,7 @@ const myLibrary = [  /// My Array of Books
 const myObjects = myLibrary.map(item => ({value: item}));
 console.table(myObjects);
 
-function Book(title, author, pages, read, bookInfo) {
+function Book(title, author, pages, read, bookInfo) {  /// Constructor of books 
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -19,7 +19,7 @@ function Book(title, author, pages, read, bookInfo) {
   // the constructor...
 }
 
-function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) {
+function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) { // Makes new books with the parameters taken in.
   this.newTitle = title;
   this.newAuthor = author;
   this.newPages = pages;
