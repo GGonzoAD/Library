@@ -4,7 +4,8 @@ const myLibrary = [
   'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
   'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read'
 ];
-
+const myObjects = myLibrary.map(item => ({value: item}));
+console.table(myObjects);
 
 function Book(title, author, pages, read, bookInfo) {
   this.title = title;
