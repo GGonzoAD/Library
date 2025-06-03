@@ -12,15 +12,14 @@ function Book(title, author, pages, read, bookInfo) {  /// Constructor of books
   this.pages = pages;
   this.read = read;
   this.bookInfo = function() {
-    return bookInfo(this.title,'by',this.author,this.pages,'Pages','Status:',this.read);
-  }
+    console.log(this.title,'by',this.author,this.pages,'Pages','Status:',this.read)
+  };
   // the constructor...
 }
-myLibrary.bookInfo('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read',
-  'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
-  'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read');
+const book1 = new Book('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read');
+book1.bookInfo();
 
-function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) { // Makes new books with the parameters taken in.
+function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook,myLibrary) { // Makes new books with the parameters taken in.
   this.newTitle = title;
   this.newAuthor = author;
   this.newPages = pages;
