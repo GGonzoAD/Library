@@ -16,7 +16,9 @@ function Book(title, author, pages, read, bookInfo) {  /// Constructor of books
   }
   // the constructor...
 }
-myLibrary.Book.bookInfo();
+myLibrary.bookInfo('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read',
+  'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
+  'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read');
 
 function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) { // Makes new books with the parameters taken in.
   this.newTitle = title;
