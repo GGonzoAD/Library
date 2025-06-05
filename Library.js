@@ -23,13 +23,12 @@ function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) { // Make
   this.newAuthor = newAuthor;
   this.newPages = newPages;
   this.newRead = newRead;
-  this.newBook = (newTitle, newAuthor, newPages, newRead);
-  myLibrary.push(newBook);
+  this.newBook = (this.newTitle, this.newAuthor, this.newPages, this.newRead);
+  myLibrary.push(this.newBook);
   // take params, create a book then store it in the array
   
 }
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Not Reading');
 book2.bookInfo();
-book3 = new Book ('myLibrary()'); 
 const book1 = new addBookToLibrary('The Talented Mr Ripley','Patrica Highsmith','252','Reading');
 console.log(myLibrary);
