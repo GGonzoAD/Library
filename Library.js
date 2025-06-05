@@ -16,16 +16,17 @@ function Book(title, author, pages, read) {  // Constructor of books
   };
   // the constructor...
 }
-const book1 = new Book('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read');
-book1.bookInfo();
 
-function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook,myLibrary) { // Makes new books with the parameters taken in.
+
+function addBookToLibrary(title,author,pages,read,newBook,library) { // Makes new books with the parameters taken in.
   this.newTitle = title;
   this.newAuthor = author;
   this.newPages = pages;
   this.newRead = read;
-  newBook = newTitle, newAuthor, newPages, newRead;
+  newBook = (newTitle, newAuthor, newPages, newRead);
   myLibrary.push(newBook);
   // take params, create a book then store it in the array
   
 }
+const book1 = new addBookToLibrary('The Talented Mr Ripley','Patrica Highsmith','252','Reading');
+
