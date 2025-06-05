@@ -18,18 +18,17 @@ function Book(title, author, pages, read) {  // Constructor of books
 }
 
 
-function addBookToLibrary(title,author,pages,read,newBook,library) { // Makes new books with the parameters taken in.
-  this.newTitle = title;
-  this.newAuthor = author;
-  this.newPages = pages;
-  this.newRead = read;
-  //newBook = (newTitle, newAuthor, newPages, newRead);
-  //myLibrary.push(newBook);
+function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) { // Makes new books with the parameters taken in.
+  this.newTitle = newTitle;
+  this.newAuthor = newAuthor;
+  this.newPages = newPages;
+  this.newRead = newRead;
+  this.newBook = (newTitle, newAuthor, newPages, newRead);
+  myLibrary.push(newBook);
   // take params, create a book then store it in the array
   
 }
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Not Reading');
 book2.bookInfo();
 const book1 = new addBookToLibrary('The Talented Mr Ripley','Patrica Highsmith','252','Reading');
-const book11 = new Book('The Talented Mr Ripley','Patrica Highsmith','252','Reading');
-book11.bookInfo();
+console.log(myLibrary);
