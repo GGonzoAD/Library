@@ -18,7 +18,7 @@ function Book(title, author, pages, read) {  // Constructor of books
 }
 
 
-function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) { // Makes new books with the parameters taken in.
+function addBookToLibrary(newTitle,newAuthor,newPages,newRead) { // Makes new books with the parameters taken in.
   this.newTitle = newTitle;
   this.newAuthor = newAuthor;
   this.newPages = newPages;
