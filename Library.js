@@ -30,5 +30,6 @@ function addBookToLibrary(newTitle,newAuthor,newPages,newRead,newBook) { // Make
 }
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Not Reading');
 book2.bookInfo();
+book3 = new Book ('myLibrary()'); 
 const book1 = new addBookToLibrary('The Talented Mr Ripley','Patrica Highsmith','252','Reading');
 console.log(myLibrary);
