@@ -1,4 +1,3 @@
-
 const myLibrary = [  // My Array of Books
   'Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Read',
   'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
@@ -23,8 +22,8 @@ function addBookToLibrary(newTitle,newAuthor,newPages,newRead) { // Makes new bo
   this.newAuthor = newAuthor;
   this.newPages = newPages;
   this.newRead = newRead;
-  this.newBook = (this.newTitle, this.newAuthor, this.newPages, this.newRead);
-  myLibrary.push(this.newBook);
+  this.newBook = [this.newTitle,'by',this.newAuthor,'Pages', this.newPages, 'Status',this.newRead];
+  const addtoLibrary = myLibrary.push(this.newBook);
   // take params, create a book then store it in the array
   
 }
