@@ -3,7 +3,7 @@ const myLibrary = [  // My Array of Books
   'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Not Read',
   'The Shadow: The Golden Vulture', 'Lester Dent', '128','Not Read',
 ];
-
+myLibrary.bookInfo();
 
 function Book(title, author, pages, read) {  // Constructor of books 
   this.title = title;
