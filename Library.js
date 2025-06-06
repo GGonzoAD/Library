@@ -23,8 +23,8 @@ function addBookToLibrary(newTitle,newAuthor,newPages,newRead) { // Makes new bo
   this.newAuthor = newAuthor;
   this.newPages = newPages;
   this.newRead = newRead;
-  this.newBook = [this.newTitle,'by',this.newAuthor,'Pages', this.newPages, 'Status',this.newRead];
-  const addtoLibrary = myLibrary.push(this.newBook);
+  this.newBook = (this.newTitle,'by',this.newAuthor,'Pages', this.newPages, 'Status',this.newRead);
+  myLibrary.push(this.newBook);
   // take params, create a book then store it in the array
   
 }
