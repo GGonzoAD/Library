@@ -19,11 +19,15 @@ function Book(title, author, pages, read) {  // Constructor of books
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Not Reading');
 book2.bookInfo();
 
-function addBookToLibrary(bookInfo) { // Makes new books with the parameters taken in.
-  this.bookInfo = bookInfo;
-  this.newBook = (this.bookInfo);
+function addBookToLibrary(title, author, pages, read) { // Makes new books with the parameters taken in.
+  this.newTitle = title;
+  this.newAuthor = author;
+  this.newPages = pages;
+  this.newRead = read;
+  this.newBook = function(){
+    return (this.newTitle,'by',this.newAuthor,this.newPages,'Pages','Status',this.newRead)
+  };
   myLibrary.push(this.newBook);
-  console.log(this.newBook);
 
   // take params, create a book then store it in the array
   
@@ -31,3 +35,4 @@ function addBookToLibrary(bookInfo) { // Makes new books with the parameters tak
 
 const book1 = new addBookToLibrary('The Talented Mr Ripley','Patrica Highsmith','252','Reading');
 console.table(myLibrary);
+book1.newBook();
