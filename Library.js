@@ -25,13 +25,14 @@ function addBookToLibrary(title, author, pages, read) { // Makes new books with 
   this.newPages = pages;
   this.newRead = read;
   this.newBook = function(){
-    return (this.newTitle,'by',this.newAuthor,this.newPages,'Pages','Status',this.newRead)
+    console.log(this.newTitle,'by',this.newAuthor,this.newPages,'Pages','Status:',this.newRead)
+    myLibrary.push(this.newBook)
   };
-  myLibrary.push(this.newBook);
+  
 
   // take params, create a book then store it in the array
-  
 }
+
 
 const book1 = new addBookToLibrary('The Talented Mr Ripley','Patrica Highsmith','252','Reading');
 console.table(myLibrary);
