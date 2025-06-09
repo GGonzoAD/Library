@@ -39,4 +39,4 @@ function addBookToLibrary(title, author, pages, genre, publicationDate, read) { 
 
 const book1 = new addBookToLibrary('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
 book1.newBook();
-console.log(myLibrary);
+console.table(myLibrary);
