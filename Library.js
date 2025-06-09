@@ -1,7 +1,7 @@
 const myLibrary = [  // My Array of Books
   'Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Science Fiction','2021','Read',
   'The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Weird Fiction','2011','Not Read',
-  'The Shadow: The Golden Vulture', 'Lester Dent','Pulp Fiction','2006','128','Not Read',
+  'The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','2006','Not Read',
 ];
 
 
@@ -20,7 +20,6 @@ function Book(title, author, pages, genre, publicationDate ,read) {  // Construc
 }
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
 book2.bookInfo();
-myLibrary.bookInfo();
 
 function addBookToLibrary(title, author, pages, genre, publicationDate, read) { // Makes new books with the parameters taken in.
   this.newTitle = title;
