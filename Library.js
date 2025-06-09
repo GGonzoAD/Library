@@ -25,8 +25,7 @@ function addBookToLibrary(title, author, pages, read) { // Makes new books with 
   this.newPages = pages;
   this.newRead = read;
   this.newBook = function(){
-    console.log(this.newTitle,'by',this.newAuthor,this.newPages,'Pages','Status:',this.newRead)
-    myLibrary.push(this.newBook)
+    myLibrary.push(this.newTitle,'by',this.newAuthor,this.newPages,'Pages','Status:',this.newRead)
   };
   
 
