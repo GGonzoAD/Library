@@ -30,7 +30,7 @@ addBookToLibrary.prototype.addToLib = function() {
 
   myLibrary.push(this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
   console.table(myLibrary)
-  
-};
 
+};
+Object.setPrototypeOf(Book.prototype, addBookToLibrary.prototype);
 book2.addToLib();
