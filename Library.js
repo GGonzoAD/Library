@@ -21,16 +21,11 @@ function Book(title, author, pages, genre, publicationDate ,read) {  // Construc
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
 book2.bookInfo();
 
-function addBookToLibrary(title, author, pages, genre, publicationDate, read) { // Makes new books with the parameters taken in.
-  this.newTitle = title;
-  this.newAuthor = author;
-  this.newPages = pages;
-  this.newGenre = genre;
-  this.newPublicationDate = publicationDate;
-  this.newRead = read;
-  
+function addBookToLibrary(bookInfo) { // Makes new books with the parameters taken in.
+  this.bookInfo = bookInfo;
   this.newBook = function(){
-    myLibrary.push(this.newTitle,'by',this.newAuthor,this.newPages,'Pages','Genre:',this.newGenre,'Year Published:',this.newPublicationDate,'Status:',this.newRead)
+
+    myLibrary.push(bookInfo);
   };
   
   // take params, create a book then store it in the array
