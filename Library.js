@@ -18,23 +18,14 @@ function Book(title, author, pages, genre, publicationDate ,read) {  // Construc
     return (this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
 
   };
-  
   // the constructor...
 }
+
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
 book2.bookInfo();
 
-function addBookToLibrary(Book) { // add book to library with the parameters taken in.
-  this.Book = Book;
-
-  this.newBook = function() {
-
-    myLibrary.push(this.Book)
-    
-  };
+function addBookToLibrary() { // add book to library with the parameters taken in.
   
 }
 
-const book1 = new Book('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
-book1.newBook();
-console.table(myLibrary);
+
