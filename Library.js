@@ -12,7 +12,7 @@ function Book(title, author, pages, genre, publicationDate ,read) {  // Construc
   this.read = read;
   this.genre = genre;
   this.publicationDate = publicationDate;
-  this.bookInfo = function() {
+  this.bookInfo = function() { ///Makes Books
     console.log (this.title,'by',this.author,this.pages,'Pages','Genre:',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
 
     return (this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
@@ -24,7 +24,7 @@ function Book(title, author, pages, genre, publicationDate ,read) {  // Construc
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
 book2.bookInfo();
 
-function addBookToLibrary(BookObj) { // Makes new books with the parameters taken in.
+function addBookToLibrary(BookObj) { // add book to library with the parameters taken in.
 
   this.newBook = function(){
     myLibrary.push(BookObj);
