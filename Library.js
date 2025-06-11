@@ -15,8 +15,7 @@ function Book(title, author, pages, genre, publicationDate ,read) {  //Construct
   // the constructor...
 }
 Book.prototype.bookInfo = function() {
-  console.log (this.title,'by',this.author,this.pages,'Pages','Genre:',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
-
+  //console.log (this.title,'by',this.author,this.pages,'Pages','Genre:',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
   return (this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
 };
 
