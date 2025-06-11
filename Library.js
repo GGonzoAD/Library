@@ -14,16 +14,23 @@ function Book(title, author, pages, genre, publicationDate ,read) {  //Construct
   this.publicationDate = publicationDate;
   // the constructor...
 }
-Book.prototype.bookInfo = function() {
-  //console.log (this.title,'by',this.author,this.pages,'Pages','Genre:',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
+Book.prototype.bookInfo = function() { 
+  console.log (this.title,'by',this.author,this.pages,'Pages','Genre:',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
   return (this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
 };
 
 const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
 book2.bookInfo();
 
-function addBookToLibrary() { //add book to library with the parameters taken in.
-  
+function addBookToLibrary() { // take params, create a book then store it in the array
+
 }
 
+addBookToLibrary.prototype.addToLib = function() {
 
+  myLibrary.push(this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read)
+  console.table(myLibrary)
+  
+};
+
+book2.addToLib();
