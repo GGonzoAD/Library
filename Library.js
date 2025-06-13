@@ -24,4 +24,4 @@ addBookToLibrary('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','
 addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Weird Fiction','2011','Not Read');
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
-console.log(myLibrary);
+console.table(myLibrary);
