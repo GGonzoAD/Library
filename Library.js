@@ -36,3 +36,6 @@ addBookToLibrary.prototype.addToLib = function() {
 Object.setPrototypeOf(Book.prototype, addBookToLibrary.prototype);
 book2.addToLib();
 
+function displayBook(myLibrary){
+  
+}
