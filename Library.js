@@ -36,6 +36,16 @@ addBookToLibrary.prototype.addToLib = function() {
 Object.setPrototypeOf(Book.prototype, addBookToLibrary.prototype);
 book2.addToLib();
 
-function displayBook(myLibrary){
-  
+function displayBook(args){
+  let myBooks = "";
+  for (let i = 0; i < args.length; i++){
+    items += '<li>$myLibrary[i]<li>';
+  }
+  return myBooks
 }
+
+document.querySelector("main").innerHTML = `
+<ol>
+$[displayBook(myLibrary)]
+</ol>
+`;
