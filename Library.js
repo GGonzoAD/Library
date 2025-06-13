@@ -13,28 +13,17 @@ function Book(title, author, pages, genre, publicationDate ,read,id) {  //Constr
   this.genre = genre;
   this.publicationDate = publicationDate;
   this.id = crypto.randomUUID();
+  this.info = function() {
+    return this.name + "" + this.author + "" + this.pages + "" + this.read + "" + this.genre + "" + this.publicationDate + "" + this.id;
+  };
   // the constructor...
 }
-Book.prototype.bookInfo = function() { 
-  console.log (this.title,'by',this.author,this.pages,'Pages','Genre:',this.genre,'Year Published:',this.publicationDate,'Status:',this.read,'ID:',this.id)
-  return (this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read,'ID:',this.id)
-};
 
-const book2 = new Book ('The Talented Mr Ripley','Patrica Highsmith','252','Noir','1955','Not Reading');
-book2.bookInfo();
-
-function addBookToLibrary() { // take params, create a book then store it in the array
-
+function addBookToLibrary(title, author, pages, genre, publicationDate, read, id) { // take params, create a book then store it in the array
+ const newBook = new Book(title, author, pages, genre, publicationDate ,read,id);
+ myLibrary.push(newBook); 
 }
 
-addBookToLibrary.prototype.addToLib = function() {
-
-  myLibrary.push(this.title,'by',this.author,this.pages,'Pages','Genre',this.genre,'Year Published:',this.publicationDate,'Status:',this.read,'ID:',this.id)
-  console.table(myLibrary)
-
-};
-Object.setPrototypeOf(Book.prototype, addBookToLibrary.prototype);
-book2.addToLib();
 
 function displayBook(arg){
   let myBooks = "";
