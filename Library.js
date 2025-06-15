@@ -11,7 +11,7 @@ function Book(title, author, pages, genre, publicationDate ,read) {  //Construct
   this.publicationDate = publicationDate;
   this.id = crypto.randomUUID();
   this.info = function() {
-    return this.name + "" + this.author + "" + this.pages + "" + this.read + "" + this.genre + "" + this.publicationDate + "" + this.id;
+    return this.title + "" + this.author + "" + this.pages + "" + this.read + "" + this.genre + "" + this.publicationDate + "" + this.id;
   };
   // the constructor...
 }
