@@ -2,22 +2,22 @@ const myLibrary = [  // My Array of Books
 ];
 
 
-function Book(title, author, pages, genre, publicationDate ,read) {  //Constructor of books 
+function Book(title, author, pages, genre, publicationDate ,status) {  //Constructor of books 
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
+  this.status = status;
   this.genre = genre;
   this.publicationDate = publicationDate;
   this.id = crypto.randomUUID();
   this.info = function() {
-    return this.title + "" + this.author + "" + this.pages + "" + this.read + "" + this.genre + "" + this.publicationDate + "" + this.id;
+    return this.title + "" + this.author + "" + this.pages + "" + this.status + "" + this.genre + "" + this.publicationDate + "" + this.id;
   };
   // the constructor...
 }
 
-function addBookToLibrary(title, author, pages, genre, publicationDate, read, id) { // take params, create a book then store it in the array
- const newBook = new Book(title, author, pages, genre, publicationDate ,read, id);
+function addBookToLibrary(title, author, pages, genre, publicationDate, status, id) { // take params, create a book then store it in the array
+ const newBook = new Book(title, author, pages, genre, publicationDate ,status, id);
  myLibrary.push(newBook); 
 }
 addBookToLibrary('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Science Fiction','2021','Read');
@@ -26,6 +26,8 @@ addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fic
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 console.table(myLibrary);
 
-function displayBook{
+function displayBook(myLibrary){
+  for (let i = 0; i < myLibrary.length; i++) {
   
+ }
 }
