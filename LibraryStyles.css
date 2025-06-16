@@ -12,7 +12,7 @@ body{
     grid-template-columns: 1fr 4fr;
 }
 .Books{
-    
+    display: flex;
 }
 .Container form{
     display: grid;
