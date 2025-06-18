@@ -31,16 +31,16 @@ function displayBook(myLibrary){ // Displays Book contents
 
   for (let i = 0; i < myLibrary.length; i++) { // Loops through the array for myLibrary
   let BookTitle = document.createElement("p"); //creates a bookTitle paragraph in the html container
-  container.appendChild(BookTitle);
+  document.getElementById("container").appendChild(BookTitle);
   let BookAuthor = document.createElement("p");
-  container.appendChild(BookAuthor);
+  document.getElementById("container").appendChild(BookAuthor);
   let BookPages = document.createElement("p");
-  container.appendChild(BookPages);
+  document.getElementById("container").appendChild(BookPages);
   let BookGenre = document.createElement("p");
-  container.appendChild(BookGenre);
+  document.getElementById("container").appendChild(BookGenre);
   let BookPubDate = document.createElement("p");
-  container.appendChild(BookPubDate);
+  document.getElementById("container").appendChild(BookPubDate);
   let BookStatus = document.createElement("p");
-  container.appendChild(BookStatus);
+  document.getElementById("container").appendChild(BookStatus);
  }
 }
