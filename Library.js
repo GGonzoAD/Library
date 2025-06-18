@@ -27,8 +27,10 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 console.table(myLibrary);
 
 function displayBook(myLibrary){ // Displays Book contents
-  for (let i = 0; i < myLibrary.length; i++) {
-  let BookTitle = document.createElement("p");
+  const container = document.querySelector("#container"); //Targets the container in the html 
+
+  for (let i = 0; i < myLibrary.length; i++) { // Loops through the array for myLibrary
+  let BookTitle = document.createElement("p"); //creates a bookTitle paragraph in the html container
   document.body.appendChild(BookTitle);
  }
 }
