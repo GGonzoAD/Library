@@ -27,20 +27,20 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 console.table(myLibrary);
 
 function displayBook(myLibrary){ // Displays Book contents
-  const container = document.querySelector("#card"); //Targets the container in the html 
+  const container = document.querySelector(".container"); //Targets the container in the html 
 
   for (let i = 0; i < myLibrary.length; i++) { // Loops through the array for myLibrary
   let BookTitle = document.createElement("p"); //creates a bookTitle paragraph in the html container
-  document.getElementById("container").appendChild(BookTitle);
+  container.appendChild(BookTitle);
   let BookAuthor = document.createElement("p");
-  document.getElementById("container").appendChild(BookAuthor);
+  container.appendChild(BookAuthor);
   let BookPages = document.createElement("p");
-  document.getElementById("container").appendChild(BookPages);
+  container.appendChild(BookPages);
   let BookGenre = document.createElement("p");
-  document.getElementById("container").appendChild(BookGenre);
+  container.appendChild(BookGenre);
   let BookPubDate = document.createElement("p");
-  document.getElementById("container").appendChild(BookPubDate);
+  container.appendChild(BookPubDate);
   let BookStatus = document.createElement("p");
-  document.getElementById("container").appendChild(BookStatus);
+  container.appendChild(BookStatus);
  }
 }
