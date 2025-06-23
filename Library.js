@@ -30,11 +30,10 @@ function displayBook(){ // Displays Book contents
   const card = document.querySelector(".card"); //Targets the card in the html 
 
   for (let i = 0; i < myLibrary.length; i++) { // Loops through the array for myLibrary
-    console.table(myLibrary[i]);
-
+    
     let BookTitle = document.createElement("p");  //creates a bookTitle paragraph in the html card
     console.log(BookTitle);
-    BookTitle.append(myLibrary.title);
+    card.append(myLibrary);
     let BookAuthor = document.createElement("p");
     card.append(BookAuthor);
     let BookPages = document.createElement("p");
