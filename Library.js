@@ -24,16 +24,17 @@ addBookToLibrary('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','
 addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Weird Fiction','2011','Not Read');
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
-console.table(myLibrary);
 
-function displayBook(myLibrary){ // Displays Book contents
+
+function displayBook(){ // Displays Book contents
   const card = document.querySelector(".card"); //Targets the card in the html 
 
   for (let i = 0; i < myLibrary.length; i++) { // Loops through the array for myLibrary
+    console.table(myLibrary[i]);
 
     let BookTitle = document.createElement("p");  //creates a bookTitle paragraph in the html card
     console.log(BookTitle);
-    BookTitle.append(title);
+    BookTitle.append(myLibrary.title);
     let BookAuthor = document.createElement("p");
     card.append(BookAuthor);
     let BookPages = document.createElement("p");
@@ -46,3 +47,4 @@ function displayBook(myLibrary){ // Displays Book contents
     card.append(BookStatus);
  }
 }
+displayBook();
