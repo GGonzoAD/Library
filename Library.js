@@ -30,18 +30,19 @@ function displayBook(myLibrary){ // Displays Book contents
   const card = document.querySelector(".card"); //Targets the card in the html 
 
   for (let i = 0; i < myLibrary.length; i++) { // Loops through the array for myLibrary
-  let BookTitle = document.createElement("p");  //creates a bookTitle paragraph in the html card
-  console.log(BookTitle);
-  card.append(BookTitle);
-  let BookAuthor = document.createElement("p");
-  card.append(BookAuthor);
-  let BookPages = document.createElement("p");
-  card.append(BookPages);
-  let BookGenre = document.createElement("p");
-  card.append(BookGenre);
-  let BookPubDate = document.createElement("p");
-  card.append(BookPubDate);
-  let BookStatus = document.createElement("p");
-  card.append(BookStatus);
+
+    let BookTitle = document.createElement("p");  //creates a bookTitle paragraph in the html card
+    console.log(BookTitle);
+    BookTitle.append(title);
+    let BookAuthor = document.createElement("p");
+    card.append(BookAuthor);
+    let BookPages = document.createElement("p");
+    card.append(BookPages);
+    let BookGenre = document.createElement("p");
+    card.append(BookGenre);
+    let BookPubDate = document.createElement("p");
+    card.append(BookPubDate);
+    let BookStatus = document.createElement("p");
+    card.append(BookStatus);
  }
 }
