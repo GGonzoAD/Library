@@ -27,7 +27,7 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 
 
 function displayBook(){ // Displays Book contents
-  const form = document.querySelector("form"); //Targets the form in the html 
+  const card = document.querySelector(".card"); //Targets the form in the html 
 
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
     const title = document.createElement('p');
@@ -48,12 +48,12 @@ function displayBook(){ // Displays Book contents
     const stat = document.createElement('p');
     stat.textContent = `Status: ${library.status}`;
 
-    form.append(title);
-    form.append(author);
-    form.append(genre);
-    form.append(pages);
-    form.append(pubDate);
-    form.append(stat);
+    card.append(title);
+    card.append(author);
+    card.append(genre);
+    card.append(pages);
+    card.append(pubDate);
+    card.append(stat);
   })
 }
 displayBook();
