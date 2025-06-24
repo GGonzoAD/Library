@@ -29,23 +29,31 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 function displayBook(){ // Displays Book contents
   const form = document.querySelector("form"); //Targets the form in the html 
 
-  for (let i = 0; i < myLibrary.length; i++) { // Loops through the array for myLibrary
-    
-    let BookTitle = document.createElement("p");  //creates a bookTitle paragraph in the html form
-  
-    form.append();
-    console.log(BookTitle);
+  myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
+    const title = document.createElement('p');
+    title.textContent = `Title: ${library.title}`;
 
-    let BookAuthor = document.createElement("p");
-    form.append(BookAuthor);
-    let BookPages = document.createElement("p");
-    form.append(BookPages);
-    let BookGenre = document.createElement("p");
-    form.append(BookGenre);
-    let BookPubDate = document.createElement("p");
-    form.append(BookPubDate);
-    let BookStatus = document.createElement("p");
-    form.append(BookStatus);
- }
+    const author = document.createElement('p');
+    author.textContent = `Author: ${library.author}`;
+
+    const genre = document.createElement('p');
+    genre.textContent = `Genre: ${library.genre}`;
+
+    const pages = document.createElement('p');
+    pages.textContent = `Pages: ${library.pages}`;
+
+    const pubDate = document.createElement('p');
+    pubDate.textContent = `Publication Date ${library.publicationDate}`;
+
+    const stat = document.createElement('p');
+    stat.textContent = `Status: ${library.status}`;
+
+    form.append(title);
+    form.append(author);
+    form.append(genre);
+    form.append(pages);
+    form.append(pubDate);
+    form.append(stat);
+  })
 }
 displayBook();
