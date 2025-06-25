@@ -27,26 +27,26 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 
 
 function displayBook(){ // Displays Book contents
-  const card = document.querySelector(".card"); //Targets the form in the html 
+  const card = document.querySelector(".card"); //Targets the card in the html 
 
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
-    const title = document.createElement('p');
-    title.textContent = `Title: ${library.title}`;
+    const title = document.createElement('p'); //Creates a paragrph element 
+    title.textContent = `Title: ${library.title}`; //Adds the library title content
 
     const author = document.createElement('p');
-    author.textContent = `Author: ${library.author}`;
+    author.textContent = `Author: ${library.author}`; //Adds the library author content
 
     const genre = document.createElement('p');
-    genre.textContent = `Genre: ${library.genre}`;
+    genre.textContent = `Genre: ${library.genre}`; //Adds the library genre content
 
     const pages = document.createElement('p');
-    pages.textContent = `Pages: ${library.pages}`;
+    pages.textContent = `Pages: ${library.pages}`; //Adds the library pages content
 
     const pubDate = document.createElement('p');
-    pubDate.textContent = `Publication Date ${library.publicationDate}`;
+    pubDate.textContent = `Publication Date ${library.publicationDate}`; //Adds the library publication date content
 
     const stat = document.createElement('p');
-    stat.textContent = `Status: ${library.status}`;
+    stat.textContent = `Status: ${library.status}`; //Adds the library status content
 
     card.append(title);
     card.append(author);

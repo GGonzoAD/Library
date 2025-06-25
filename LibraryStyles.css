@@ -5,17 +5,14 @@
 body{
     background-color: blueviolet;
 }
-
-.Container{
+.container{
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 4fr 4fr;
 }
-.Books{
+.Book-Card{
     display: flex;
-}
-.Container form{
-    display: grid;
-    text-align: center;
-    grid-template-columns: 1fr 4fr;
+    width: 100px;
+    height: 200px;
+    background-color:antiquewhite;
 }
