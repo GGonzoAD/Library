@@ -31,7 +31,7 @@ function displayBook(){ // Displays Book contents
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
     const card = document.createElement('div'); //creates a new div in the html 
     document.body.append(card); //Appends the div to the body
-    
+
     const title = document.createElement('p'); //Creates a paragrph element 
     title.textContent = `Title: ${library.title}`; //Adds the library title content
 
@@ -45,7 +45,7 @@ function displayBook(){ // Displays Book contents
     pages.textContent = `Pages: ${library.pages}`; //Adds the library pages content
 
     const pubDate = document.createElement('p');
-    pubDate.textContent = `Publication Date ${library.publicationDate}`; //Adds the library publication date content
+    pubDate.textContent = `Publication Date: ${library.publicationDate}`; //Adds the library publication date content
 
     const stat = document.createElement('p');
     stat.textContent = `Status: ${library.status}`; //Adds the library status content
