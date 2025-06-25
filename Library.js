@@ -27,13 +27,14 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 
 
 function displayBook(){ // Displays Book contents
-  const card = document.querySelector(".card"); //Targets the card in the html 
 
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
-
+    const card = document.createElement('div'); //creates a new div in the html 
+    document.body.append(card); //Appends the div to the body
+    
     const title = document.createElement('p'); //Creates a paragrph element 
     title.textContent = `Title: ${library.title}`; //Adds the library title content
-    
+
     const author = document.createElement('p');
     author.textContent = `Author: ${library.author}`; //Adds the library author content
 
