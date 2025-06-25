@@ -30,9 +30,10 @@ function displayBook(){ // Displays Book contents
   const card = document.querySelector(".card"); //Targets the card in the html 
 
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
+
     const title = document.createElement('p'); //Creates a paragrph element 
     title.textContent = `Title: ${library.title}`; //Adds the library title content
-
+    
     const author = document.createElement('p');
     author.textContent = `Author: ${library.author}`; //Adds the library author content
 

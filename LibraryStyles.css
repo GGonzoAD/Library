@@ -10,7 +10,7 @@ body{
     display: grid;
     grid-template-columns: 4fr 4fr;
 }
-.Book-Card{
+Card{
     display: flex;
     width: 100px;
     height: 200px;
