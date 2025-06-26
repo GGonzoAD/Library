@@ -29,8 +29,10 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 function displayBook(){ // Displays Book contents
 
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
-    const card = document.createElement('form'); //creates a new div in the html 
+
+    const card = document.createElement('form'); //creates a new form in the html 
     document.body.append(card); //Appends the div to the body
+    card.classList.add('form'); //Adds a class to the form for css styling
 
     const title = document.createElement('p'); //Creates a paragrph element 
     title.textContent = `Title: ${library.title}`; //Adds the library title content
@@ -51,13 +53,16 @@ function displayBook(){ // Displays Book contents
     stat.textContent = `Status: ${library.status}`; //Adds the library status content
 
     const button = document.createElement('button');
-    button.innerHTML = "Add a Book"
+    button.innerHTML = "Add a Book";
+    button.classList.add('button');
 
     const button1 = document.createElement('button');
-    button1.innerHTML = "Change Book Status"
+    button1.innerHTML = "Change Book Status";
+    button1.classList.add('button');
 
     const button2 = document.createElement('button');
-    button2.innerHTML = "Delete a Book"
+    button2.innerHTML = "Delete a Book";
+    button2.classList.add('button');
 
     card.append(title);
     card.append(author);
