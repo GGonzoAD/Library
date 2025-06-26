@@ -29,7 +29,7 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 function displayBook(){ // Displays Book contents
 
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
-    const card = document.createElement('div'); //creates a new div in the html 
+    const card = document.createElement('form'); //creates a new div in the html 
     document.body.append(card); //Appends the div to the body
 
     const title = document.createElement('p'); //Creates a paragrph element 
@@ -50,12 +50,24 @@ function displayBook(){ // Displays Book contents
     const stat = document.createElement('p');
     stat.textContent = `Status: ${library.status}`; //Adds the library status content
 
+    const button = document.createElement('button');
+    button.innerHTML = "Add a Book"
+
+    const button1 = document.createElement('button');
+    button1.innerHTML = "Change Book Status"
+
+    const button2 = document.createElement('button');
+    button2.innerHTML = "Delete a Book"
+
     card.append(title);
     card.append(author);
     card.append(genre);
     card.append(pages);
     card.append(pubDate);
     card.append(stat);
+    card.append(button);
+    card.append(button1);
+    card.append(button2);
   })
 }
 displayBook();
