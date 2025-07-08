@@ -26,4 +26,15 @@ body{
     border-radius: 10px;
     border-color: navajowhite;
 }
+.open-button{
+    display: flex;
+    
+    background: linear-gradient(rgb(63, 2, 63),rgb(138, 27, 138),silver);
+    color:aliceblue;
+    width: 110px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border-color: navajowhite;
+}
 

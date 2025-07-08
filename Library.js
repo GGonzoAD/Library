@@ -54,7 +54,7 @@ function displayBook(){ // Displays Book contents
 
     const button = document.createElement('button');
     button.innerHTML = "Add a Book";
-    button.classList.add('button');
+    button.classList.add('open-button');
 
     const button2 = document.createElement('button');
     button2.innerHTML = "Delete a Book";
@@ -67,13 +67,12 @@ function displayBook(){ // Displays Book contents
     card.append(pubDate);
     card.append(stat);
     card.append(button);
-    card.append(button1);
     card.append(button2);
   })
 }
 displayBook();
 const modal = document.querySelector('.modal');
-const openModal = document.querySelector('.button');
+const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
 
 openModal.addEventListener('click',() => {
