@@ -56,10 +56,6 @@ function displayBook(){ // Displays Book contents
     button.innerHTML = "Add a Book";
     button.classList.add('button');
 
-    const button1 = document.createElement('button');
-    button1.innerHTML = "Change Book Status";
-    button1.classList.add('button');
-
     const button2 = document.createElement('button');
     button2.innerHTML = "Delete a Book";
     button2.classList.add('button');
@@ -76,10 +72,14 @@ function displayBook(){ // Displays Book contents
   })
 }
 displayBook();
-const modal = document.querySelector('#modal');
+const modal = document.querySelector('.modal');
 const openModal = document.querySelector('.button');
-const closeModal = document.querySelector('.close');
+const closeModal = document.querySelector('.close-button');
 
 openModal.addEventListener('click',() => {
   modal.showModal();
+})
+
+closeModal.addEventListener('click',() => {
+  modal.close();
 })
