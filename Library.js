@@ -69,16 +69,17 @@ function displayBook(){ // Displays Book contents
     card.append(button);
     card.append(button2);
   })
+
+  const modal = document.querySelector('.modal');
+  const openModal = document.querySelector('.open-button');
+  const closeModal = document.querySelector('.close-button');
+
+  openModal.addEventListener('click',() => {
+   modal.showModal();
+   })
+
+  closeModal.addEventListener('click',() => {
+   modal.close();
+   })
 }
 displayBook();
-const modal = document.querySelector('.modal');
-const openModal = document.querySelector('.open-button');
-const closeModal = document.querySelector('.close-button');
-
-openModal.addEventListener('click',() => {
-  modal.showModal();
-})
-
-closeModal.addEventListener('click',() => {
-  modal.close();
-})
