@@ -70,16 +70,17 @@ function displayBook(){ // Displays Book contents
     card.append(button2);
   })
 
-  const modal = document.querySelector('.modal');
+  const dialog = document.querySelector('dialog');
   const openModal = document.querySelector('.open-button');
   const closeModal = document.querySelector('.close-button');
 
-  openModal.addEventListener('click',() => {
-   modal.showModal();
-   })
+  openModal.addEventListener('click', () => {
+   dialog.showModal()
+   });
 
-  closeModal.addEventListener('click',() => {
-   modal.close();
-   })
+  closeModal.addEventListener('click', () => {
+   dialog.close()
+   });
+  
 }
 displayBook();
