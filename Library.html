@@ -14,7 +14,7 @@
           <div class = "Books">
             <dialog id ="modal">
               <h2>Book Information</h2>
-              <form class="form" method="dialog">
+              <form class="form" onsubmit="closeModal()" method="dialog">
                 <label for="book_title">Book Title:</label>
                 <input type="text" name="book_title" id="book_title"><br>
                 <label for="author">Author:</label>
@@ -29,7 +29,7 @@
                 <input type="checkbox" name="status" id="status">
                 <label for="status">Not Read:</label>
                 <input type="checkbox" name="status2" id="status2">
-                <button class="button close-button">Close</button>
+                <button class="button close-button" type="button">Close</button>
               </form>
             </dialog>
           </div>

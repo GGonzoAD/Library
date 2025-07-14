@@ -54,6 +54,7 @@ function displayBook(){ // Displays Book contents
 
     const button = document.createElement('button');
     button.innerHTML = "Add a Book";
+    button.type = "button";
     button.classList.add('open-button');
 
     const button2 = document.createElement('button');
@@ -80,10 +81,10 @@ const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 
 openModal.addEventListener("click", () => {
-   dialog.showModal()
+  dialog.showModal()
    });
 
-closeModal.addEventListener("click", () => {
-   dialog.close()
+closeModal.addEventListener("click", () => { 
+  dialog.close()
    });
-  
+
