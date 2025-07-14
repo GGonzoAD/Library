@@ -70,17 +70,20 @@ function displayBook(){ // Displays Book contents
     card.append(button2);
   })
 
-  const dialog = document.querySelector('dialog');
-  const openModal = document.querySelector('.open-button');
-  const closeModal = document.querySelector('.close-button');
-
-  openModal.addEventListener('click', () => {
-   dialog.showModal()
-   });
-
-  closeModal.addEventListener('click', () => {
-   dialog.close()
-   });
+  
   
 }
 displayBook();
+
+const dialog = document.getElementById("modal");
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector('.close-button');
+
+openModal.addEventListener('click', () => {
+   dialog.showModal()
+   });
+
+closeModal.addEventListener('click', () => {
+   dialog.close()
+   });
+  
