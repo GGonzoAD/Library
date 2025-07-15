@@ -17,6 +17,7 @@ body{
 
 .button{
     display: flex;
+    
     background: linear-gradient(rgb(63, 2, 63),rgb(138, 27, 138),silver);
     color:aliceblue;
     width: 110px;
@@ -27,6 +28,7 @@ body{
 }
 .open-button{
     display: flex;
+    
     background: linear-gradient(rgb(63, 2, 63),rgb(138, 27, 138),silver);
     color:aliceblue;
     width: 110px;
@@ -35,3 +37,4 @@ body{
     border-radius: 10px;
     border-color: navajowhite;
 }
+

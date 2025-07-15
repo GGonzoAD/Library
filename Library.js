@@ -54,12 +54,13 @@ function displayBook(){ // Displays Book contents
 
     const button = document.createElement('button');
     button.innerHTML = "Add a Book";
-    button.type = "button";
     button.classList.add('open-button');
+    button.type = "button";
 
     const button2 = document.createElement('button');
     button2.innerHTML = "Delete a Book";
     button2.classList.add('button');
+    button2.type = "button";
 
     card.append(title);
     card.append(author);
@@ -70,21 +71,16 @@ function displayBook(){ // Displays Book contents
     card.append(button);
     card.append(button2);
   })
-
-  
-  
 }
 displayBook();
+const modal = document.querySelector('.modal');
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector('.close-button');
 
-const dialog = document.getElementById("modal");
-const openModal = document.querySelector(".open-button");
-const closeModal = document.querySelector(".close-button");
+openModal.addEventListener('click',() => {
+  modal.showModal();
+})
 
-openModal.addEventListener("click", () => {
-  dialog.showModal()
-   });
-
-closeModal.addEventListener("click", () => { 
-  dialog.close()
-   });
-
+closeModal.addEventListener('click',() => {
+  modal.close();
+})
