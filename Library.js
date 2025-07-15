@@ -31,6 +31,7 @@ function displayBook(){ // Displays Book contents
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
 
     const card = document.createElement('form'); //creates a new form in the html 
+    this.form = crypto.randomUUID();
     document.body.append(card); //Appends the div to the body
     card.classList.add('form'); //Adds a class to the form for css styling
 
