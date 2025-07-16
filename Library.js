@@ -31,7 +31,6 @@ function displayBook(){ // Displays Book contents
   myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
 
     const card = document.createElement('form'); //creates a new form in the html 
-    this.form = crypto.randomUUID();
     document.body.append(card); //Appends the div to the body
     card.classList.add('form'); //Adds a class to the form for css styling
 
@@ -74,14 +73,16 @@ function displayBook(){ // Displays Book contents
   })
 }
 displayBook();
-const modal = document.querySelector('.modal');
-const openModal = document.querySelector('.open-button');
-const closeModal = document.querySelector('.close-button');
 
-openModal.addEventListener('click',() => {
+const modal = document.querySelector('.modal');
+  const openModal = document.querySelector('.open-button');
+  const closeModal = document.querySelector('.close-button');
+
+openModal.addEventListener("click",() => {
   modal.showModal();
 })
 
-closeModal.addEventListener('click',() => {
+closeModal.addEventListener("click",(e) => {
+  e.preventDefault();
   modal.close();
 })
