@@ -75,8 +75,8 @@ function displayBook(){ // Displays Book contents
 displayBook();
 
 const modal = document.querySelector('.modal');
-  const openModal = document.querySelector('.open-button');
-  const closeModal = document.querySelector('.close-button');
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector('.close-button');
 
 openModal.addEventListener("click",() => {
   modal.showModal();
