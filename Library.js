@@ -15,9 +15,10 @@ function Book(title, author, pages, genre, publicationDate ,status) {  //Constru
   };
   // the constructor...
 }
- Book.Prototype.Togglestatus(){
-  Book.status = !Book.status;
- }
+ Book.prototype.Status = function() { //Book status toggle
+  return this.status = !this.status
+ };
+
 function addBookToLibrary(title, author, pages, genre, publicationDate, status, id) { // take params, creates a book then stores it in the array
  const newBook = new Book(title, author, pages, genre, publicationDate ,status, id);
  myLibrary.push(newBook); //Stores a new book in the array
