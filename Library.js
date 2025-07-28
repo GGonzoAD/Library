@@ -65,6 +65,11 @@ function displayBook(){ // Displays Book contents
     button2.classList.add('button');
     button2.type = "button";
 
+    const button3 = document.createElement('button');
+    button3.innerHTML = "Status";
+    button3.classList.add('button');
+    button3.type = "button";
+
     card.append(title);
     card.append(author);
     card.append(genre);
@@ -73,6 +78,7 @@ function displayBook(){ // Displays Book contents
     card.append(stat);
     card.append(button);
     card.append(button2);
+    card.append(button3);
 
   })
 }
