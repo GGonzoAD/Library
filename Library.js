@@ -15,9 +15,6 @@ function Book(title, author, pages, genre, publicationDate ,status) {  //Constru
   };
   // the constructor...
 }
- Book.prototype.Status = function() { //Book status toggle
-  return this.status = !this.status
- };
 
 function addBookToLibrary(title, author, pages, genre, publicationDate, status, id) { // take params, creates a book then stores it in the array
  const newBook = new Book(title, author, pages, genre, publicationDate ,status, id);
@@ -64,11 +61,13 @@ function displayBook(){ // Displays Book contents
     button2.innerHTML = "Delete a Book";
     button2.classList.add('button');
     button2.type = "button";
+    button2.id = "Delete";
 
     const button3 = document.createElement('button');
     button3.innerHTML = "Status";
     button3.classList.add('button');
     button3.type = "button";
+    button3.id = "status"
 
     card.append(title);
     card.append(author);
@@ -79,20 +78,19 @@ function displayBook(){ // Displays Book contents
     card.append(button);
     card.append(button2);
     card.append(button3);
-
   })
 }
 displayBook();
 
 const modal = document.querySelector('.modal');
-const openModal = document.querySelectorAll('.open-button');
+const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
 
-openModal.forEach(open => {
-  open.addEventListener('click', () => modal.showModal());
+openModal.addEventListener("click",() => {
+  modal.showModal();
 })
 
 closeModal.addEventListener("click",(e) => {
- e.preventDefault();
- modal.close();
+  e.preventDefault();
+  modal.close();
 })
