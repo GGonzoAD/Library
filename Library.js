@@ -25,6 +25,9 @@ addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112'
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 
+Book.prototype.statusChange (
+  Book.status != Book.status
+);
 
 function displayBook(){ // Displays Book contents
 
