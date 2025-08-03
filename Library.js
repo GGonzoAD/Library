@@ -26,7 +26,10 @@ addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fic
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 
 Book.prototype.statusChange = function() {
- Book.status != Book.status
+ if (Book.status != Book.status){
+  Book.status.innerHTML("Read") || ("Not Read");
+ }
+
 };
   
 
@@ -100,5 +103,5 @@ closeModal.addEventListener("click",(e) => {
   modal.close();
 })
 StatButton.addEventListener("click",() => {
-  statusChange();
+  Book.statusChange();
 })
