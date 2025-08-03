@@ -89,6 +89,7 @@ displayBook();
 const modal = document.querySelector('.modal');
 const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
+const StatButton = document.getElementById('status');
 
 openModal.addEventListener("click",() => {
   modal.showModal();
@@ -97,4 +98,7 @@ openModal.addEventListener("click",() => {
 closeModal.addEventListener("click",(e) => {
   e.preventDefault();
   modal.close();
+})
+StatButton.addEventListener("click",() => {
+  statusChange();
 })
