@@ -25,13 +25,12 @@ addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112'
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 
-Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books. 
- if (Book.status != Book.status){
-  Book.status.innerHTML("Read") || ("Not Read");
+Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
+ if (this.status != tjis.status){
+  this.status.innerHTML("Read") || ("Not Read");
+  console.log(this.status.innerHTML); 
  }
-
 };
-  
 
 function displayBook(){ // Displays Book contents
 
