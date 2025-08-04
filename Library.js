@@ -26,9 +26,9 @@ addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fic
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
 
 Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
- if (this.status != tjis.status){
-  this.status.innerHTML("Read") || ("Not Read");
-  console.log(this.status.innerHTML); 
+ if (Book.status != Book.status){
+  Book.status.innerHTML=("Read") || ("Not Read");
+  console.log(Book.status); 
  }
 };
 
@@ -91,7 +91,7 @@ displayBook();
 const modal = document.querySelector('.modal');
 const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
-const StatButton = document.getElementById('status');
+const StatButton = document.getElementById("status");
 
 openModal.addEventListener("click",() => {
   modal.showModal();
@@ -102,5 +102,5 @@ closeModal.addEventListener("click",(e) => {
   modal.close();
 })
 StatButton.addEventListener("click",() => {
-  Book.statusChange();
+  Book.prototype.statusChange();
 })
