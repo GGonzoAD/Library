@@ -92,6 +92,8 @@ const modal = document.querySelector('.modal');
 const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
 const StatButton = document.getElementById("status");
+const statusInput = document.getElementById("statusInput");
+const statusInput2 = document.getElementById("statusInput2");
 
 openModal.addEventListener("click",() => {
   modal.showModal();
@@ -113,19 +115,24 @@ closeModal.addEventListener("click",(e) => {
   const pubdateInput = document.getElementById("pubdateInput");
   const PubDate = pubdateInput.value;
   console.log(PubDate);
-   const statusInput = document.getElementById("statusInput");
   const Status = statusInput.value;
   console.log(Status);
- const statusInput2 = document.getElementById("statusInput2");
   const Status2 = statusInput2.value;
   console.log(Status2);
-
-
 
   e.preventDefault();
   modal.close();
   displayBook();
 })
+
 StatButton.addEventListener("click",() => {
   Book.prototype.statusChange();
 })
+
+statusInput.addEventListener("click",function(event) {
+  statusInput2.disabled = true;
+});
+
+statusInput2.addEventListener("click",function(event) {
+  statusInput.disabled = true;
+});
