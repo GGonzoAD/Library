@@ -93,7 +93,7 @@ const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
 const StatButton = document.getElementById("status");
 const statusInput = document.getElementById("statusInput");
-const statusInput2 = document.getElementById("status2Input");
+const statusInput2 = document.getElementById("statusInput2");
 
 openModal.addEventListener("click",() => {
   modal.showModal();
@@ -120,7 +120,7 @@ closeModal.addEventListener("click",(e) => {
   const Status2 = statusInput2.value;
   console.log(Status2);
   addBookToLibrary(Title, Author, Genre, Pages, PubDate, Status, Status2);
-  displayBook();
+  displayBook(Title, Author, Genre, Pages, PubDate, Status, Status2);
   e.preventDefault();
   modal.close();
 })
