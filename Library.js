@@ -117,9 +117,10 @@ closeModal.addEventListener("click",(e) => {
   console.log(PubDate);
   const Status = statusInput.value;
   console.log(Status);
-  const Status2 = status2Input.value;
+  const Status2 = statusInput2.value;
   console.log(Status2);
-
+  addBookToLibrary(Title, Author, Genre, Pages, PubDate, Status, Status2);
+  displayBook();
   e.preventDefault();
   modal.close();
 })
