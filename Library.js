@@ -66,7 +66,7 @@ function displayBook(){ // Displays Book contents
 
     const button2 = document.createElement('button');
     button2.innerHTML = "Delete a Book";
-    button2.classList.add('button');
+    button2.classList.add('delete-button');
     button2.type = "button";
     button2.id = "Delete";
 
@@ -95,6 +95,7 @@ const closeModal = document.querySelector('.close-button');
 const StatButton = document.getElementById("status");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
+const deleteBook = document.querySelectorAll('.delete-button');
 
 openModal.forEach(open => {
   open.addEventListener('click', () => modal.showModal());
