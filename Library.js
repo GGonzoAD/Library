@@ -62,6 +62,7 @@ function displayBook(){ // Displays Book contents
     button.innerHTML = "Add a Book";
     button.classList.add('open-button');
     button.type = "button";
+    button.id = "Open-Button";
 
     const button2 = document.createElement('button');
     button2.innerHTML = "Delete a Book";
@@ -89,15 +90,17 @@ function displayBook(){ // Displays Book contents
 displayBook();
 
 const modal = document.querySelector('.modal');
-const openModal = document.querySelector('.open-button');
+const openModal = document.querySelectorAll('Open-Button');
 const closeModal = document.querySelector('.close-button');
 const StatButton = document.getElementById("status");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
 
-openModal.addEventListener("click",() => {
+forEach(
+  openModal.addEventListener("click",() => {
   modal.showModal();
 })
+)
 
 closeModal.addEventListener("click",(e) => {
   const titleInput = document.getElementById("titleInput");
