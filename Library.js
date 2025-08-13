@@ -20,10 +20,10 @@ function addBookToLibrary(title, author, pages, genre, publicationDate, status, 
  const newBook = new Book(title, author, pages, genre, publicationDate ,status, id);
  myLibrary.push(newBook); //Stores a new book in the array
 }
-addBookToLibrary('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Science Fiction','2021','Read');
-addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Weird Fiction','2011','Not Read');
-addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','2006','Not Read');
-addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","1939","Read");
+addBookToLibrary('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Science Fiction','September 25,2021','Read');
+addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112','Weird Fiction','March 1,2011','Not Read');
+addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','July 1,2006','Not Read');
+addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
 Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
  if (this.status != this.status){
