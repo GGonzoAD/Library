@@ -90,17 +90,16 @@ function displayBook(){ // Displays Book contents
 displayBook();
 
 const modal = document.querySelector('.modal');
-const openModal = document.querySelectorAll('Open-Button');
+const openModal = document.querySelectorAll('.open-button');
 const closeModal = document.querySelector('.close-button');
 const StatButton = document.getElementById("status");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
 
-forEach(
-  openModal.addEventListener("click",() => {
-  modal.showModal();
+openModal.forEach(open => {
+  open.addEventListener('click', () => modal.showModal());
 })
-)
+
 
 closeModal.addEventListener("click",(e) => {
   const titleInput = document.getElementById("titleInput");
