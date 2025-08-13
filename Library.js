@@ -96,11 +96,15 @@ const StatButton = document.getElementById("status");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
 const deleteBook = document.querySelectorAll('.delete-button');
+const closeButton = document.getElementById("close");
 
 openModal.forEach(open => {
   open.addEventListener('click', () => modal.showModal());
 })
 
+closeButton.addEventListener('click', () => {
+  modal.close();
+})
 
 closeModal.addEventListener("click",(e) => {
   const titleInput = document.getElementById("titleInput");
