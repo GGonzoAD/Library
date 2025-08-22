@@ -85,11 +85,8 @@ function displayBook(){ // Displays Book contents
     card.append(button);
     card.append(button2);
     card.append(button3);
-    const uniqueObjects = Array.from(new Set(myLibrary.map(Book => Book.id)))
-    .map(id => myLibrary.find(Book => Book.id === id));
-    uniqueObjects();
-  })
 }
+)}
 displayBook();
 
 const modal = document.querySelector('.modal');
@@ -133,6 +130,10 @@ closeModal.addEventListener("click",(e) => {
   e.preventDefault();
   modal.close();
   displayBook();
+  const uniqueArray = myLibrary.filter((obj, index, self) => 
+      index === self.findIndex((o) => o.id === obj.id)
+    )
+    console.log(uniqueArray);
 })
 
 StatButton.addEventListener("click",() => {
