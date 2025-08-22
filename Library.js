@@ -85,6 +85,9 @@ function displayBook(){ // Displays Book contents
     card.append(button);
     card.append(button2);
     card.append(button3);
+    const uniqueObjects = Array.from(new Set(myLibrary.map(Book => Book.id)))
+    .map(id => myLibrary.find(Book => Book.id === id));
+    uniqueObjects();
   })
 }
 displayBook();
@@ -127,9 +130,9 @@ closeModal.addEventListener("click",(e) => {
   const Status2 = statusInput2.value;
   console.log(Status2);
   addBookToLibrary(Title, Author, Genre, Pages, PubDate, Status, Status2);
-  displayBook();
   e.preventDefault();
   modal.close();
+  displayBook();
 })
 
 StatButton.addEventListener("click",() => {
