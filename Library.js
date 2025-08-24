@@ -34,34 +34,32 @@ Book.prototype.statusChange = function() { // Book Status change prototype with 
 
 function displayBook(){ // Displays Book contents
 
-  const uniqueArray = myLibrary.filter(function(item, index){
-    return index === myLibrary.findIndex(function(obj){
-      return item.id === obj.id;
-    })
-  })
-  uniqueArray.forEach(library => { //For each loop that iterates each object on the unique array
+  const uniqueArray = myLibrary.filter((o, index, arr) =>
+    arr.findIndex(item => JSON.stringify(item) === JSON.stringify(o)) === index
+ );
+  uniqueArray.forEach(uniqueArray => { //For each loop that iterates each object on the unique array
 
     const card = document.createElement('form'); //creates a new form in the html 
     document.body.append(card); //Appends the div to the body
     card.classList.add('form'); //Adds a class to the form for css styling
 
     const title = document.createElement('p'); //Creates a paragrph element 
-    title.textContent = `Title: ${library.title}`; //Adds the library title content
+    title.textContent = `Title: ${uniqueArray.title}`; //Adds the library title content
 
     const author = document.createElement('p');
-    author.textContent = `Author: ${library.author}`; //Adds the library author content
+    author.textContent = `Author: ${uniqueArray.author}`; //Adds the library author content
 
     const genre = document.createElement('p');
-    genre.textContent = `Genre: ${library.genre}`; //Adds the library genre content
+    genre.textContent = `Genre: ${uniqueArray.genre}`; //Adds the library genre content
 
     const pages = document.createElement('p');
-    pages.textContent = `Pages: ${library.pages}`; //Adds the library pages content
+    pages.textContent = `Pages: ${uniqueArray.pages}`; //Adds the library pages content
 
     const pubDate = document.createElement('p');
-    pubDate.textContent = `Publication Date: ${library.publicationDate}`; //Adds the library publication date content
+    pubDate.textContent = `Publication Date: ${uniqueArray.publicationDate}`; //Adds the library publication date content
 
     const stat = document.createElement('p');
-    stat.textContent = `Status: ${library.status}`; //Adds the library status content
+    stat.textContent = `Status: ${uniqueArray.status}`; //Adds the library status content
 
     const button = document.createElement('button');
     button.innerHTML = "Add a Book";
