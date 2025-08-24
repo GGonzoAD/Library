@@ -85,6 +85,13 @@ function displayBook(){ // Displays Book contents
     card.append(button);
     card.append(button2);
     card.append(button3);
+
+    const uniqueArray = myLibrary.filter(function(item, index){
+    return index === myLibrary.findIndex(function(obj){
+      return item.id === obj.id;
+    })
+  })
+  card.append(uniqueArray);
 }
 )}
 displayBook();
@@ -130,10 +137,7 @@ closeModal.addEventListener("click",(e) => {
   e.preventDefault();
   modal.close();
   displayBook();
-  const uniqueArray = myLibrary.filter((obj, index, self) => 
-      index === self.findIndex((o) => o.id === obj.id)
-    )
-    console.log(uniqueArray);
+  
 })
 
 StatButton.addEventListener("click",() => {
