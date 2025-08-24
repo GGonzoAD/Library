@@ -34,7 +34,12 @@ Book.prototype.statusChange = function() { // Book Status change prototype with 
 
 function displayBook(){ // Displays Book contents
 
-  myLibrary.forEach(library => { //For each loop that iterates each object on the myLibrary array
+  const uniqueArray = myLibrary.filter(function(item, index){
+    return index === myLibrary.findIndex(function(obj){
+      return item.id === obj.id;
+    })
+  })
+  uniqueArray.forEach(library => { //For each loop that iterates each object on the unique array
 
     const card = document.createElement('form'); //creates a new form in the html 
     document.body.append(card); //Appends the div to the body
@@ -85,13 +90,6 @@ function displayBook(){ // Displays Book contents
     card.append(button);
     card.append(button2);
     card.append(button3);
-
-    const uniqueArray = myLibrary.filter(function(item, index){
-    return index === myLibrary.findIndex(function(obj){
-      return item.id === obj.id;
-    })
-  })
-  card.append(uniqueArray);
 }
 )}
 displayBook();
