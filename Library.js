@@ -112,10 +112,10 @@ closeButton.addEventListener('click', () => {
 closeModal.addEventListener("click",(e) => {
   const titleInput = document.getElementById("titleInput");
   const Title = titleInput.value;
-  console.log(Title);
+  
   const authorInput = document.getElementById("authorInput");
   const Author = authorInput.value;
-  console.log(Author);
+  
   const genreInput = document.getElementById("genreInput");
   const Genre = genreInput.value;
   console.log(Genre);
@@ -124,18 +124,17 @@ closeModal.addEventListener("click",(e) => {
   console.log(Pages);
   const pubdateInput = document.getElementById("pubdateInput");
   const PubDate = pubdateInput.value;
-  console.log(PubDate);
+  
   const Status = statusInput.value;
-  console.log(Status);
+  
   const Status2 = statusInput2.value;
-  console.log(Status2);
-  addBookToLibrary(Title, Author, Genre, Pages, PubDate, Status, Status2);
+
+  addBookToLibrary(Title, Author, Pages, Genre, PubDate, Status, Status2);
   e.preventDefault();
   modal.close();
-  const container = document.getElementById("Container");
+  const container = document.getElementById('Container');
   container.replaceChildren();
   displayBook();
-  
 })
 
 StatButton.addEventListener("click",() => {
