@@ -132,6 +132,8 @@ closeModal.addEventListener("click",(e) => {
   addBookToLibrary(Title, Author, Genre, Pages, PubDate, Status, Status2);
   e.preventDefault();
   modal.close();
+  const container = document.getElementById("Container");
+  container.replaceChildren();
   displayBook();
   
 })
