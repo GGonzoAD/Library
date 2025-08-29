@@ -118,10 +118,10 @@ closeModal.addEventListener("click",(e) => {
   
   const genreInput = document.getElementById("genreInput");
   const Genre = genreInput.value;
-  console.log(Genre);
+  
   const pagesInput = document.getElementById("pagesInput");
   const Pages = pagesInput.value;
-  console.log(Pages);
+  
   const pubdateInput = document.getElementById("pubdateInput");
   const PubDate = pubdateInput.value;
   
@@ -133,7 +133,7 @@ closeModal.addEventListener("click",(e) => {
   e.preventDefault();
   modal.close();
   const container = document.getElementById('Container');
-  container.replaceChildren();
+  container.textContent = '';
   displayBook();
 })
 
