@@ -33,7 +33,6 @@ Book.prototype.statusChange = function() { // Book Status change prototype with 
 };
 
 
-
 function displayBook(){ // Displays Book contents
 
   const uniqueArray = myLibrary.filter((o, index, arr) =>
@@ -130,10 +129,12 @@ closeModal.addEventListener("click",(e) => {
   const Status = statusInput.value;
   
   const Status2 = statusInput2.value;
-
+  
   addBookToLibrary(Title, Author, Pages, Genre, PubDate, Status, Status2);
   e.preventDefault();
   modal.close();
+  const container = document.querySelector("#Container");
+  container.innerHTML = "";
   displayBook();
 })
 
