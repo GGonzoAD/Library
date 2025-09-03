@@ -26,41 +26,38 @@ addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fic
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
 Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
- if (this.status != this.status){
-  this.status.innerHTML=("Read") || ("Not Read");
+ if (Book.status != Book.status){
+  this.status.innerHTML = ("Read") || ("Not Read");
   console.log(Book.status); 
  }
 };
 
-
 function displayBook(){ // Displays Book contents
 
-  const uniqueArray = myLibrary.filter((o, index, arr) =>
-    arr.findIndex(item => JSON.stringify(item) === JSON.stringify(o)) === index
- );
-  uniqueArray.forEach(uniqueArray => { //For each loop that iterates each object on the unique array
+  myLibrary.forEach(myLibrary => { //For each loop that iterates each object on the unique array
 
+    const form = document.getElementById("Form-Container");
     const card = document.createElement('form'); //creates a new form in the html 
-    document.body.append(card); //Appends the div to the body
+    form.append(card); //Appends the div to the body
     card.classList.add('form'); //Adds a class to the form for css styling
 
     const title = document.createElement('p'); //Creates a paragrph element 
-    title.textContent = `Title: ${uniqueArray.title}`; //Adds the library title content
+    title.textContent = `Title: ${myLibrary.title}`; //Adds the library title content
 
     const author = document.createElement('p');
-    author.textContent = `Author: ${uniqueArray.author}`; //Adds the library author content
+    author.textContent = `Author: ${myLibrary.author}`; //Adds the library author content
 
     const genre = document.createElement('p');
-    genre.textContent = `Genre: ${uniqueArray.genre}`; //Adds the library genre content
+    genre.textContent = `Genre: ${myLibrary.genre}`; //Adds the library genre content
 
     const pages = document.createElement('p');
-    pages.textContent = `Pages: ${uniqueArray.pages}`; //Adds the library pages content
+    pages.textContent = `Pages: ${myLibrary.pages}`; //Adds the library pages content
 
     const pubDate = document.createElement('p');
-    pubDate.textContent = `Publication Date: ${uniqueArray.publicationDate}`; //Adds the library publication date content
+    pubDate.textContent = `Publication Date: ${myLibrary.publicationDate}`; //Adds the library publication date content
 
     const stat = document.createElement('p');
-    stat.textContent = `Status: ${uniqueArray.status}`; //Adds the library status content
+    stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
 
     const button = document.createElement('button');
     button.innerHTML = "Add a Book";
@@ -95,7 +92,7 @@ displayBook();
 
 const modal = document.querySelector('.modal');
 const openModal = document.querySelectorAll('.open-button');
-const closeModal = document.querySelector('.close-button');
+const closeModal = document.getElementById("Close-Button");
 const StatButton = document.getElementById("status");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
@@ -129,12 +126,11 @@ closeModal.addEventListener("click",(e) => {
   const Status = statusInput.value;
   
   const Status2 = statusInput2.value;
-  
   addBookToLibrary(Title, Author, Pages, Genre, PubDate, Status, Status2);
-  e.preventDefault();
   modal.close();
-  const container = document.querySelector("#Container");
-  container.innerHTML = "";
+  e.preventDefault();
+  const form = document.getElementById("Form-Container");
+  form.innerHTML = "";
   displayBook();
 })
 

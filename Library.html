@@ -10,8 +10,8 @@
 <body>
     <h1>Welcome to the library</h1>
         
-        <div class = "Container" id="Container">
-          <div class = "Books">
+        <div class = "Container" id="Form-Container">
+          <div class = "Books" id = "Books">
             <dialog class ="modal" id ="modal">
               <h2>Book Information</h2>
               <form class = "form" id = "form" method="dialog">
@@ -30,7 +30,7 @@
                 <input type ="checkbox" name="status" value="Read" id="statusInput">
                 <label for ="statusInput2">Not Read:</label>
                 <input type ="checkbox" name="status" value="Not Read" id="statusInput2">
-                <button class ="button close-button" type="submit">Add Book</button>
+                <button class ="button close-button" id ="Close-Button" type="submit">Add Book</button>
               </form>
             </dialog>
           </div>
