@@ -87,7 +87,7 @@ function displayBook(){ // Displays Book contents
     card.append(button2);
     card.append(button3);
 }
-)}
+)};
 displayBook();
 
 const modal = document.querySelector('.modal');
@@ -101,11 +101,23 @@ const closeButton = document.getElementById("close");
 
 openModal.forEach(open => {
   open.addEventListener('click', () => modal.showModal());
-})
+});
 
 closeButton.addEventListener('click', () => {
   modal.close();
-})
+});
+
+StatButton.addEventListener("click",() => {
+  Book.prototype.statusChange();
+});
+
+statusInput.addEventListener("click",function() {
+  statusInput2.disabled = true;
+});
+
+statusInput2.addEventListener("click",function() {
+  statusInput.disabled = true;
+});
 
 closeModal.addEventListener("click",(e) => {
   const titleInput = document.getElementById("titleInput");
@@ -126,22 +138,11 @@ closeModal.addEventListener("click",(e) => {
   const Status = statusInput.value;
   
   const Status2 = statusInput2.value;
+
   addBookToLibrary(Title, Author, Pages, Genre, PubDate, Status, Status2);
   modal.close();
   e.preventDefault();
   const form = document.getElementById("Form-Container");
   form.innerHTML = "";
   displayBook();
-})
-
-StatButton.addEventListener("click",() => {
-  Book.prototype.statusChange();
-})
-
-statusInput.addEventListener("click",function() {
-  statusInput2.disabled = true;
-});
-
-statusInput2.addEventListener("click",function() {
-  statusInput.disabled = true;
 });
