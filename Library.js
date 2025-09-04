@@ -18,7 +18,6 @@ function Book(title, author, pages, genre, publicationDate ,status) {  //Constru
 
 function addBookToLibrary(title, author, pages, genre, publicationDate, status, id) { // take params, creates a book then stores it in the array
  const newBook = new Book(title, author, pages, genre, publicationDate ,status, id);
- console.log(status);
  myLibrary.push(newBook); //Stores a new book in the array
 }
 addBookToLibrary('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Science Fiction','September 25,2021','Read');
@@ -26,12 +25,12 @@ addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112'
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','July 1,2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
-Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
- if (Book.status != Book.status){
-  this.status.innerHTML = ("Read") || ("Not Read");
-  console.log(Book.status); 
+Book.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
+  if(Book.status != Book.status){
+    this.status = "Read" || "Not Read";
+    console.log(this.status);
+  } 
  }
-};
 
 function displayBook(){ // Displays Book contents
 
@@ -94,7 +93,7 @@ displayBook();
 const modal = document.querySelector('.modal');
 const openModal = document.querySelectorAll('.open-button');
 const closeModal = document.getElementById("Close-Button");
-const StatButton = document.getElementById("status");
+const StatButton = document.querySelector("myLibrary.status");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
 const deleteBook = document.querySelectorAll('.delete-button');
@@ -109,7 +108,7 @@ closeButton.addEventListener('click', () => {
 });
 
 StatButton.addEventListener("click",() => {
-  Book.prototype.statusChange();
+ Book.statusChange();
 });
 
 statusInput.addEventListener("click",function() {
