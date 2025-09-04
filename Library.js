@@ -11,13 +11,14 @@ function Book(title, author, pages, genre, publicationDate ,status) {  //Constru
   this.publicationDate = publicationDate; // Books publication
   this.id = crypto.randomUUID(); // Gives books a randomized id
   this.info = function() {
-    return this.title + "" + this.author + "" + this.pages + "" + this.status + "" + this.genre + "" + this.publicationDate + "" + this.id; //Returns all of the book info
+    return this.title + "" + this.author + "" + this.pages + "" + this.status + "" + this.status2 + "" + this.genre + "" + this.publicationDate + "" + this.id; //Returns all of the book info
   };
   // the constructor...
 }
 
 function addBookToLibrary(title, author, pages, genre, publicationDate, status, id) { // take params, creates a book then stores it in the array
  const newBook = new Book(title, author, pages, genre, publicationDate ,status, id);
+ console.log(status);
  myLibrary.push(newBook); //Stores a new book in the array
 }
 addBookToLibrary('Behold Humanity!: May We Come In?','Ralts Bloodthrone','471','Science Fiction','September 25,2021','Read');
@@ -117,6 +118,7 @@ statusInput.addEventListener("click",function() {
 
 statusInput2.addEventListener("click",function() {
   statusInput.disabled = true;
+  statusInput.value = statusInput2.value;
 });
 
 closeModal.addEventListener("click",(e) => {
@@ -138,6 +140,7 @@ closeModal.addEventListener("click",(e) => {
   const Status = statusInput.value;
   
   const Status2 = statusInput2.value;
+  console.log(Status2);
 
   addBookToLibrary(Title, Author, Pages, Genre, PubDate, Status, Status2);
   modal.close();
