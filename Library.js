@@ -51,6 +51,7 @@ function displayBook(){ // Displays Book contents
 
     const stat = document.createElement('p');
     stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
+    console.log(myLibrary.status);
 
     const button = document.createElement('button');
     button.innerHTML = "Add a Book";
@@ -96,9 +97,10 @@ Book.prototype.statusChange = function() { // Book Status change prototype with 
   if(this.status != this.status){
     myLibrary.status.innerHTML = "Read" || "Not Read";
   } 
-  else(this.status == this.status){
-    console.log(this.status);
-  }
+  else if(this.status == this.status){
+    console.log(myLibrary.status);
+  } 
+  
  }
 
 openModal.forEach(open => {
@@ -110,6 +112,7 @@ closeButton.addEventListener('click', () => {
 });
 
 StatButton.addEventListener("click",() => {
+  console.log(myLibrary.status);
  Book.prototype.statusChange();
 });
 
