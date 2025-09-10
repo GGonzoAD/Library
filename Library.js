@@ -25,13 +25,6 @@ addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112'
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','July 1,2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
-Book.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
-  if(Book.status != Book.status){
-    this.status = "Read" || "Not Read";
-    console.log(this.status);
-  } 
- }
-
 function displayBook(){ // Displays Book contents
 
   myLibrary.forEach(myLibrary => { //For each loop that iterates each object on the unique array
@@ -93,11 +86,20 @@ displayBook();
 const modal = document.querySelector('.modal');
 const openModal = document.querySelectorAll('.open-button');
 const closeModal = document.getElementById("Close-Button");
-const StatButton = document.querySelector("myLibrary.status");
+const StatButton = document.getElementById("status");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
 const deleteBook = document.querySelectorAll('.delete-button');
 const closeButton = document.getElementById("close");
+
+Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
+  if(this.status != this.status){
+    myLibrary.status.innerHTML = "Read" || "Not Read";
+  } 
+  else(this.status == this.status){
+    console.log(this.status);
+  }
+ }
 
 openModal.forEach(open => {
   open.addEventListener('click', () => modal.showModal());
@@ -108,7 +110,7 @@ closeButton.addEventListener('click', () => {
 });
 
 StatButton.addEventListener("click",() => {
- Book.statusChange();
+ Book.prototype.statusChange();
 });
 
 statusInput.addEventListener("click",function() {
@@ -139,7 +141,6 @@ closeModal.addEventListener("click",(e) => {
   const Status = statusInput.value;
   
   const Status2 = statusInput2.value;
-  console.log(Status2);
 
   addBookToLibrary(Title, Author, Pages, Genre, PubDate, Status, Status2);
   modal.close();
