@@ -25,7 +25,7 @@ addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112'
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','July 1,2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
-function displayBook(){ // Displays Book contents
+  function displayBook(){ // Displays Book contents
 
   myLibrary.forEach(myLibrary => { //For each loop that iterates each object on the unique array
 
@@ -49,7 +49,7 @@ function displayBook(){ // Displays Book contents
     const pubDate = document.createElement('p');
     pubDate.textContent = `Publication Date: ${myLibrary.publicationDate}`; //Adds the library publication date content
 
-    const stat = document.createElement('p');
+    let stat = document.createElement('p');
     stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
 
     const button = document.createElement('button');
@@ -68,7 +68,7 @@ function displayBook(){ // Displays Book contents
     button3.innerHTML = "Status";
     button3.classList.add('button');
     button3.type = "button";
-    button3.id = "status"
+    button3.id = "Status-Button"
 
     card.append(title);
     card.append(author);
@@ -86,18 +86,17 @@ displayBook();
 const modal = document.querySelector('.modal');
 const openModal = document.querySelectorAll('.open-button');
 const closeModal = document.getElementById("Close-Button");
-const StatButton = document.getElementById("status");
+const StatButton = document.getElementById("Status-Button");
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
 const deleteBook = document.querySelectorAll('.delete-button');
 const closeButton = document.getElementById("close");
 
 Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
+  
   if(this.status != this.status){
-    myLibrary.status.innerHTML = "Read" || "Not Read";
-  } 
-  else if(this.status === this.status){
-    console.log(myLibrary.status);
+    let stat = myLibrary.status;
+    stat.textContent = "Read" || "Not Read";
   } 
   
  }
@@ -111,7 +110,6 @@ closeButton.addEventListener('click', () => {
 });
 
 StatButton.addEventListener("click",() => {
-  console.log(myLibrary.status);
  Book.prototype.statusChange();
 });
 
