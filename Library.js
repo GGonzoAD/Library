@@ -93,12 +93,14 @@ const deleteBook = document.querySelectorAll('.delete-button');
 const closeButton = document.getElementById("close");
 
 Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
-  
-  if(this.status != this.status){
-    let stat = myLibrary.status;
-    stat.textContent = "Read" || "Not Read";
-  } 
-  
+
+     if (this.status =! this.status2){
+      this.status = "Read" || "Unread";
+      console.log(this.status);
+     }
+     else if (this.status2 =! this.status){
+      this.status2 ? "Read" : "Unread";
+     }
  }
 
 openModal.forEach(open => {
