@@ -51,8 +51,8 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
 
     let stat = document.createElement('p');
     stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
-
     const button = document.createElement('button');
+
     button.innerHTML = "Add a Book";
     button.classList.add('open-button');
     button.type = "button";
@@ -66,7 +66,7 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
 
     const button3 = document.createElement('button');
     button3.innerHTML = "Status";
-    button3.classList.add('button');
+    button3.classList.add('status-button');
     button3.type = "button";
     button3.id = "Status-Button"
 
@@ -83,25 +83,28 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
 )};
 displayBook();
 
+Book.prototype.toggleStatus = function(){
+  this.status = !this.status;
+  console.log(this.status);
+  const statValue = (this.status) ? "Read" : "Not Read";
+  console.log(statValue);
+  myLibrary.status = statValue;
+  console.log(myLibrary);
+};
+
+ Book.prototype.deleteBook = function (){
+  console.log(this.id);
+ };
+
 const modal = document.querySelector('.modal');
 const openModal = document.querySelectorAll('.open-button');
 const closeModal = document.getElementById("Close-Button");
-const StatButton = document.getElementById("Status-Button");
+const StatButton = document.querySelectorAll('.status-button');
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
 const deleteBook = document.querySelectorAll('.delete-button');
 const closeButton = document.getElementById("close");
 
-Book.prototype.statusChange = function() { // Book Status change prototype with function to change the text for the status field on the displayed books.
-
-     if (this.status =! this.status2){
-      this.status = "Read" || "Unread";
-      console.log(this.status);
-     }
-     else if (this.status2 =! this.status){
-      this.status2 ? "Read" : "Unread";
-     }
- }
 
 openModal.forEach(open => {
   open.addEventListener('click', () => modal.showModal());
@@ -111,8 +114,12 @@ closeButton.addEventListener('click', () => {
   modal.close();
 });
 
-StatButton.addEventListener("click",() => {
- Book.prototype.statusChange();
+StatButton.forEach(button =>{
+  button.addEventListener('click',Book.prototype.toggleStatus)
+});
+
+deleteBook.forEach(button =>{
+  button.addEventListener('click',Book.prototype.deleteBook)
 });
 
 statusInput.addEventListener("click",function() {
