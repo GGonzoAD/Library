@@ -86,10 +86,17 @@ displayBook();
 Book.prototype.toggleStatus = function(){
   this.status = !this.status;
   console.log(this.status);
-  const statValue = (this.status) ? "Read" : "Not Read";
+  const statValue = (this.status) ? "Not Read" : "Read";
   console.log(statValue);
   myLibrary.status = statValue;
-  console.log(myLibrary);
+  const bookIndex = myLibrary.find((book) => {
+    book.status = myLibrary.status;
+    const form = document.getElementById("Form-Container");
+    form.innerHTML = "";
+    displayBook();
+    return myLibrary.status; 
+  })
+  console.log(bookIndex);
 };
 
  Book.prototype.deleteBook = function (){
