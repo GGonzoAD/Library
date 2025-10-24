@@ -82,22 +82,22 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
 }
 )};
 displayBook();
-
+myLibrary.forEach(function(){
 Book.prototype.toggleStatus = function(){
   this.status = !this.status;
   console.log(this.status);
   const statValue = (this.status) ? "Not Read" : "Read";
   console.log(statValue);
   myLibrary.status = statValue;
-  const bookIndex = myLibrary.find((book) => {
+  const bookIndex = myLibrary.some((book) => {
     book.status = myLibrary.status;
     const form = document.getElementById("Form-Container");
     form.innerHTML = "";
     displayBook();
     return myLibrary.status; 
-  })
+  });
   console.log(bookIndex);
-};
+}});
 
  Book.prototype.deleteBook = function (){
   console.log(this.id);
