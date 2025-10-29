@@ -1,5 +1,5 @@
-const myLibrary = [  // My Array of Books
-];
+const myLibrary = [];  // My Array of Books
+
 
 
 function Book(title, author, pages, genre, publicationDate ,status) {  //Constructor of books 
@@ -51,24 +51,24 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
 
     let stat = document.createElement('p');
     stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
-    const button = document.createElement('button');
 
-    button.innerHTML = "Add a Book";
-    button.classList.add('open-button');
-    button.type = "button";
-    button.id = "Open-Button";
+    const Add_a_Book = document.createElement('button');
+    Add_a_Book.innerHTML = "Add a Book";
+    Add_a_Book.classList.add('open-button');
+    Add_a_Book.type = "button";
+    Add_a_Book.id = "Open-Button";
 
-    const button2 = document.createElement('button');
-    button2.innerHTML = "Delete a Book";
-    button2.classList.add('delete-button');
-    button2.type = "button";
-    button2.id = "Delete";
+    const Delete_a_Book = document.createElement('button');
+    Delete_a_Book.innerHTML = "Delete a Book";
+    Delete_a_Book.classList.add('delete-button');
+    Delete_a_Book.type = "button";
+    Delete_a_Book.id = "Delete";
 
-    const button3 = document.createElement('button');
-    button3.innerHTML = "Status";
-    button3.classList.add('status-button');
-    button3.type = "button";
-    button3.id = "Status-Button"
+    const Reading = document.createElement('button');
+    Reading.innerHTML = "Status";
+    Reading.classList.add('status-button');
+    Reading.type = "button";
+    Reading.id = "Status-Button"
 
     card.append(title);
     card.append(author);
@@ -76,9 +76,9 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
     card.append(pages);
     card.append(pubDate);
     card.append(stat);
-    card.append(button);
-    card.append(button2);
-    card.append(button3);
+    card.append(Add_a_Book);
+    card.append(Delete_a_Book);
+    card.append(Reading);
 }
 )};
 displayBook();
@@ -91,6 +91,9 @@ Book.prototype.toggleStatus = function(){
   myLibrary.status = statValue;
   const bookIndex = myLibrary.some((book) => {
     book.status = myLibrary.status;
+    const form = document.getElementById("Form-Container");
+    form.innerHTML = "";
+    displayBook();
     return book.status;
   });
   console.log(bookIndex);
