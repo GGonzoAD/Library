@@ -89,11 +89,8 @@ Book.prototype.toggleStatus = function(){
   const statValue = (this.status) ? "Not Read" : "Read";
   console.log(statValue);
   myLibrary.status = statValue;
-  const bookIndex = myLibrary.some((book) => {
+  const bookIndex = myLibrary.findIndex((book) => {
     book.status = myLibrary.status;
-    const form = document.getElementById("Form-Container");
-    form.innerHTML = "";
-    displayBook();
     return book.status;
   });
   console.log(bookIndex);
