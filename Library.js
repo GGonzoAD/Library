@@ -68,17 +68,9 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
     Reading.innerHTML = "Status";
     Reading.classList.add('status-button');
     Reading.type = "button";
-    Reading.id = "Status-Button"
+    Reading.id = "Status-Button";
 
-    card.append(title);
-    card.append(author);
-    card.append(genre);
-    card.append(pages);
-    card.append(pubDate);
-    card.append(stat);
-    card.append(Add_a_Book);
-    card.append(Delete_a_Book);
-    card.append(Reading);
+    card.append(title,author,genre,pages,pubDate,stat,Add_a_Book,Delete_a_Book,Reading);
 }
 )};
 displayBook();
@@ -86,7 +78,7 @@ displayBook();
 Book.prototype.toggleStatus = function(){
   this.status = !this.status;
   console.log(this.status);
-  const statValue = (this.status) ? "Not Read" : "Read";
+  const statValue = (this.status ? "Not Read" : "Read");
   console.log(statValue);
   myLibrary.status = statValue;
   const bookIndex = myLibrary.findIndex((book) => {
@@ -161,4 +153,4 @@ closeModal.addEventListener("click",(e) => {
   const form = document.getElementById("Form-Container");
   form.innerHTML = "";
   displayBook();
-});
+})
