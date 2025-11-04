@@ -25,9 +25,9 @@ addBookToLibrary('The Complete Works of H.P. Lovecraft','H.P. Lovecraft', '1112'
 addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fiction','July 1,2006','Not Read');
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
-  function displayBook(){ // Displays Book contents
+function displayBook(){ // Displays Book contents
 
-  myLibrary.forEach(myLibrary => { //For each loop that iterates each object on the unique array
+  myLibrary.forEach((myLibrary, index) => { //For each loop that iterates each object on the unique array
 
     const form = document.getElementById("Form-Container");
     const card = document.createElement('form'); //creates a new form in the html 
@@ -49,8 +49,10 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
     const pubDate = document.createElement('p');
     pubDate.textContent = `Publication Date: ${myLibrary.publicationDate}`; //Adds the library publication date content
 
-    let stat = document.createElement('p');
-    stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
+    let Stat = document.createElement('p');
+    Stat.textContent = `Status: ${myLibrary.status}-${index}`; //Adds the library status content
+    Stat.id = `${myLibrary.status}-${index}`;
+    console.log(Stat.id);
 
     const Add_a_Book = document.createElement('button');
     Add_a_Book.innerHTML = "Add a Book";
@@ -68,9 +70,8 @@ addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","R
     Reading.innerHTML = "Status";
     Reading.classList.add('status-button');
     Reading.type = "button";
-    Reading.id = "Status-Button";
 
-    card.append(title,author,genre,pages,pubDate,stat,Add_a_Book,Delete_a_Book,Reading);
+    card.append(title,author,genre,pages,pubDate,Stat,Add_a_Book,Delete_a_Book,Reading);
 }
 )};
 displayBook();
@@ -81,9 +82,9 @@ Book.prototype.toggleStatus = function(){
   const statValue = (this.status ? "Not Read" : "Read");
   console.log(statValue);
   myLibrary.status = statValue;
+  console.log(this.id)
   const bookIndex = myLibrary.findIndex((book) => {
-    book.status = myLibrary.status;
-    return book.status;
+    return myLibrary.status;
   });
   console.log(bookIndex);
 };
