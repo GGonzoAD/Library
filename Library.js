@@ -26,10 +26,10 @@ addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fic
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
 function displayBook(){ // Displays Book contents
-
+  
   myLibrary.forEach((myLibrary, index) => { //For each loop that iterates each object on the unique array
-
     const form = document.getElementById("Form-Container");
+    form.innerHTML = "";
     const card = document.createElement('form'); //creates a new form in the html 
     form.append(card); //Appends the div to the body
     card.classList.add('form'); //Adds a class to the form for css styling
@@ -64,7 +64,7 @@ function displayBook(){ // Displays Book contents
     Delete_a_Book.innerHTML = "Delete a Book";
     Delete_a_Book.classList.add('delete-button');
     Delete_a_Book.type = "button";
-    Delete_a_Book.id = "Delete";
+    Delete_a_Book.onclick = `deleteBook(${index})`;
 
     const Reading = document.createElement('button');
     Reading.innerHTML = "Status";
@@ -77,7 +77,7 @@ function displayBook(){ // Displays Book contents
 )};
 displayBook();
 
-Book.prototype.toggleStatus = function(){
+Book.prototype.toggleStatus = function(index){
   this.status = !this.status;
   const statValue = (this.status ? "Not Read" : "Read");
   myLibrary.status = statValue;
@@ -86,9 +86,7 @@ Book.prototype.toggleStatus = function(){
 };
 
  Book.prototype.deleteBook = function (index){
-  myLibrary.splice(index,1);
-  const form = document.getElementById("Form-Container");
-  form.innerHTML = "";
+  myLibrary.splice(index);
   displayBook();
  };
 
