@@ -50,7 +50,7 @@ function displayBook(){ // Displays Book contents
     pubDate.textContent = `Publication Date: ${myLibrary.publicationDate}`; //Adds the library publication date content
 
     let Stat = document.createElement('p');
-    Stat.textContent = `Status: ${myLibrary.status}-${index}`; //Adds the library status content
+    Stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
     Stat.id = `${myLibrary.status}-${index}`;
     console.log(Stat.id);
 
@@ -70,6 +70,7 @@ function displayBook(){ // Displays Book contents
     Reading.innerHTML = "Status";
     Reading.classList.add('status-button');
     Reading.type = "button";
+    Reading.id = `${myLibrary.status}-${index}`;
 
     card.append(title,author,genre,pages,pubDate,Stat,Add_a_Book,Delete_a_Book,Reading);
 }
@@ -78,19 +79,15 @@ displayBook();
 
 Book.prototype.toggleStatus = function(){
   this.status = !this.status;
-  console.log(this.status);
   const statValue = (this.status ? "Not Read" : "Read");
-  console.log(statValue);
   myLibrary.status = statValue;
-  console.log(this.id)
-  const bookIndex = myLibrary.findIndex((book) => {
-    return myLibrary.status;
-  });
-  console.log(bookIndex);
+  console.log(myLibrary.status);
+  displayBook();
 };
 
- Book.prototype.deleteBook = function (){
-  console.log(this.id);
+ Book.prototype.deleteBook = function (index){
+  myLibrary.splice(index,1);
+  displayBook();
  };
 
 const modal = document.querySelector('.modal');
