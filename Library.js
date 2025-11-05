@@ -87,6 +87,8 @@ Book.prototype.toggleStatus = function(){
 
  Book.prototype.deleteBook = function (index){
   myLibrary.splice(index,1);
+  const form = document.getElementById("Form-Container");
+  form.innerHTML = "";
   displayBook();
  };
 
