@@ -26,11 +26,11 @@ addBookToLibrary('The Shadow: The Golden Vulture', 'Lester Dent','128','Pulp Fic
 addBookToLibrary("The Big Sleep","Raymond Chandler","227","Noir","Feb 6,1939","Read");
 
 function displayBook(){ // Displays Book contents
-  
-  myLibrary.forEach((myLibrary, index) => { //For each loop that iterates each object on the unique array
     const form = document.getElementById("Form-Container");
-    form.innerHTML = "";
-    const card = document.createElement('form'); //creates a new form in the html 
+    const card = document.createElement('form');
+  myLibrary.forEach((myLibrary, index) => { //For each loop that iterates each object on the unique array
+
+     //creates a new form in the html 
     form.append(card); //Appends the div to the body
     card.classList.add('form'); //Adds a class to the form for css styling
 
@@ -51,8 +51,7 @@ function displayBook(){ // Displays Book contents
 
     let Stat = document.createElement('p');
     Stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
-    Stat.id = `${myLibrary.status}-${index}`;
-    console.log(Stat.id);
+    Stat.id = myLibrary.findIndex;
 
     const Add_a_Book = document.createElement('button');
     Add_a_Book.innerHTML = "Add a Book";
@@ -64,30 +63,33 @@ function displayBook(){ // Displays Book contents
     Delete_a_Book.innerHTML = "Delete a Book";
     Delete_a_Book.classList.add('delete-button');
     Delete_a_Book.type = "button";
-    Delete_a_Book.onclick = `deleteBook(${index})`;
+    Delete_a_Book.id = `${myLibrary.deleteBook}-${index}`;
 
     const Reading = document.createElement('button');
     Reading.innerHTML = "Status";
     Reading.classList.add('status-button');
     Reading.type = "button";
-    Reading.id = `${myLibrary.status}-${index}`;
+    Reading.id = `${myLibrary.toggleStatus}`;
+    console.log(Reading.id);
 
     card.append(title,author,genre,pages,pubDate,Stat,Add_a_Book,Delete_a_Book,Reading);
 }
 )};
 displayBook();
 
-Book.prototype.toggleStatus = function(index){
+Book.prototype.toggleStatus = function(){
   this.status = !this.status;
   const statValue = (this.status ? "Not Read" : "Read");
   myLibrary.status = statValue;
+  bookIndex = myLibrary.findIndex((book) =>{
+    this.id === book.id; 
+  })
   console.log(myLibrary.status);
-  displayBook();
 };
 
- Book.prototype.deleteBook = function (index){
-  myLibrary.splice(index);
-  displayBook();
+Book.prototype.deleteBook = function (index){
+  myLibrary.splice(index,1);
+
  };
 
 const modal = document.querySelector('.modal');
