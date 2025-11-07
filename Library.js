@@ -51,7 +51,7 @@ function displayBook(){ // Displays Book contents
 
     let Stat = document.createElement('p');
     Stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
-    Stat.id = myLibrary.findIndex;
+    Stat.id = `${myLibrary.status}-${index}`;
 
     const Add_a_Book = document.createElement('button');
     Add_a_Book.innerHTML = "Add a Book";
@@ -69,8 +69,6 @@ function displayBook(){ // Displays Book contents
     Reading.innerHTML = "Status";
     Reading.classList.add('status-button');
     Reading.type = "button";
-    Reading.id = `${myLibrary.toggleStatus}`;
-    console.log(Reading.id);
 
     card.append(title,author,genre,pages,pubDate,Stat,Add_a_Book,Delete_a_Book,Reading);
 }
@@ -78,18 +76,18 @@ function displayBook(){ // Displays Book contents
 displayBook();
 
 Book.prototype.toggleStatus = function(){
+  const bookID = this.id;
   this.status = !this.status;
-  const statValue = (this.status ? "Not Read" : "Read");
-  myLibrary.status = statValue;
-  bookIndex = myLibrary.findIndex((book) =>{
-    this.id === book.id; 
-  })
+  const bookIndex = myLibrary.findIndex((book) =>{book.id === bookID})
+  myLibrary.status = (this.status ? "Not Read" : "Read");
   console.log(myLibrary.status);
 };
 
-Book.prototype.deleteBook = function (index){
+Book.prototype.deleteBook = function (){
+  const bookID = this.id;
+  const index = myLibrary.findIndex((Book) => Book.id === bookID)
   myLibrary.splice(index,1);
-
+  displayBook();
  };
 
 const modal = document.querySelector('.modal');
@@ -111,7 +109,7 @@ closeButton.addEventListener('click', () => {
 });
 
 StatButton.forEach(button =>{
-  button.addEventListener('click',Book.prototype.toggleStatus)
+  button.addEventListener('click',Book.prototype.toggleStatus);
 });
 
 deleteBook.forEach(button =>{
