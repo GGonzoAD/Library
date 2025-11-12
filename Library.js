@@ -51,7 +51,7 @@ function displayBook(){ // Displays Book contents
 
     let Stat = document.createElement('p');
     Stat.textContent = `Status: ${myLibrary.status}`; //Adds the library status content
-    Stat.id = `${myLibrary.status}-${index}`;
+    Stat.id = `${this.status}-${index}`;
 
     const Add_a_Book = document.createElement('button');
     Add_a_Book.innerHTML = "Add a Book";
@@ -69,25 +69,30 @@ function displayBook(){ // Displays Book contents
     Reading.innerHTML = "Status";
     Reading.classList.add('status-button');
     Reading.type = "button";
+    Reading.id = `${this.status}-${index}`;
 
     card.append(title,author,genre,pages,pubDate,Stat,Add_a_Book,Delete_a_Book,Reading);
 }
 )};
 displayBook();
 
-Book.prototype.toggleStatus = function(){
-  const bookID = this.id;
-  this.status = !this.status;
-  const bookIndex = myLibrary.findIndex((book) =>{book.id === bookID})
-  myLibrary.status = (this.status ? "Not Read" : "Read");
+Book.prototype.toggleStatus = function(stat){
+
+  stat.textContent = `Status: ${this.status ? "Not Read" : "Read"}`;
+  myLibrary.status = stat;
+  const form = document.getElementById("Form-Container");
+  form.innerHTML = "";
   console.log(myLibrary.status);
+  displayBook();
 };
 
-Book.prototype.deleteBook = function (){
-  const bookID = this.id;
-  const index = myLibrary.findIndex((Book) => Book.id === bookID)
-  myLibrary.splice(index,1);
-  displayBook();
+Book.prototype.deleteBook = function (bookID){
+  const objectIndex = myLibrary.findIndex(book => book.id === bookID)
+  myLibrary.splice(objectIndex,1);
+  const form = document.getElementById("Form-Container");
+  form.innerHTML = "";
+  displayBook()
+  
  };
 
 const modal = document.querySelector('.modal');
