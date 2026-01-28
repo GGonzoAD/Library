@@ -78,7 +78,7 @@ displayBook();
 
 Book.prototype.toggleStatus = function(stat){
 
-  stat.textContent = `Status: ${this.status ? "Not Read" : "Read"}`;
+  stat = `Status: ${this.status ? "Not Read" : "Read"}`;
   myLibrary.status = stat;
   const form = document.getElementById("Form-Container");
   form.innerHTML = "";
@@ -118,7 +118,7 @@ StatButton.forEach(button =>{
 });
 
 deleteBook.forEach(button =>{
-  button.addEventListener('click',Book.prototype.deleteBook)
+  button.addEventListener('click',Book.prototype.deleteBook);
 });
 
 statusInput.addEventListener("click",function() {
