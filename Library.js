@@ -69,22 +69,27 @@ function displayBook(){ // Displays Book contents
     Reading.innerHTML = "Status";
     Reading.classList.add('status-button');
     Reading.type = "button";
-    Reading.id = `${this.status}-${index}`;
+    Reading.dataset.bookID = myLibrary.id;
+    Reading.addEventListener('click', () => {
+      toggleStatus(myLibrary.id);
+    })
 
     card.append(title,author,genre,pages,pubDate,Stat,Add_a_Book,Delete_a_Book,Reading);
 }
 )};
 displayBook();
 
-Book.prototype.toggleStatus = function(stat){
+ function toggleStatus (bookID){
+  const book = myLibrary.find(b => b.id === bookID);
 
-  stat = `Status: ${this.status ? "Not Read" : "Read"}`;
-  myLibrary.status = stat;
+  if(!book) return;
+  book.status = book.status === "Read" ? "Not Read" : "Read";
+
   const form = document.getElementById("Form-Container");
   form.innerHTML = "";
-  console.log(myLibrary.status);
+  console.log(book.status);
   displayBook();
-};
+ };
 
 Book.prototype.deleteBook = function (bookID){
   const objectIndex = myLibrary.findIndex(book => book.id === bookID)
