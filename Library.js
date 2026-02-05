@@ -63,7 +63,7 @@ function displayBook(){ // Displays Book contents
     Delete_a_Book.innerHTML = "Delete a Book";
     Delete_a_Book.classList.add('delete-button');
     Delete_a_Book.type = "button";
-    Delete_a_Book.id = `${myLibrary.deleteBook}-${index}`;
+    Delete_a_Book.dataset.bookID = myLibrary.id;
 
     const Reading = document.createElement('button');
     Reading.innerHTML = "Status";
@@ -91,7 +91,7 @@ displayBook();
   displayBook();
  };
 
-Book.prototype.deleteBook = function (bookID){
+function deleteBook (bookID){
   const objectIndex = myLibrary.findIndex(book => book.id === bookID)
   myLibrary.splice(objectIndex,1);
   const form = document.getElementById("Form-Container");
@@ -106,7 +106,7 @@ const closeModal = document.getElementById("Close-Button");
 const StatButton = document.querySelectorAll('.status-button');
 const statusInput = document.getElementById("statusInput");
 const statusInput2 = document.getElementById("statusInput2");
-const deleteBook = document.querySelectorAll('.delete-button');
+const DeleteBook = document.querySelectorAll('.delete-button');
 const closeButton = document.getElementById("close");
 
 
@@ -119,11 +119,11 @@ closeButton.addEventListener('click', () => {
 });
 
 StatButton.forEach(button =>{
-  button.addEventListener('click',Book.prototype.toggleStatus);
+  button.addEventListener('click',toggleStatus);
 });
 
 deleteBook.forEach(button =>{
-  button.addEventListener('click',Book.prototype.deleteBook);
+  button.addEventListener('click', DeleteBook);
 });
 
 statusInput.addEventListener("click",function() {
