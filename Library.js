@@ -64,6 +64,9 @@ function displayBook(){ // Displays Book contents
     Delete_a_Book.classList.add('delete-button');
     Delete_a_Book.type = "button";
     Delete_a_Book.dataset.bookID = myLibrary.id;
+    Delete_a_Book.addEventListener('click',() => {
+      deleteBook(myLibrary.id);
+    })
 
     const Reading = document.createElement('button');
     Reading.innerHTML = "Status";
@@ -122,9 +125,6 @@ StatButton.forEach(button =>{
   button.addEventListener('click',toggleStatus);
 });
 
-deleteBook.forEach(button =>{
-  button.addEventListener('click', DeleteBook);
-});
 
 statusInput.addEventListener("click",function() {
   statusInput2.disabled = true;
